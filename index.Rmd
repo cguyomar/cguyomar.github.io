@@ -1,5 +1,5 @@
 ---
-title: " "
+pagetitle: "Home"
 output: 
   html_document:
     toc: no
