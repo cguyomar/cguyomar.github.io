@@ -1,5 +1,5 @@
 ---
-pagetitle: "Home"
+pagetitle: "Cervin Guyomar Homepage"
 output: 
   html_document:
     toc: no
@@ -20,6 +20,8 @@ I am a bioinformatician, with a background in statistics and agronomy.
 
 I am currently a PhD student in [GenScale team](https://team.inria.fr/genscale/) (INRIA/IRISA) and [EGI team](https://www6.rennes.inra.fr/igepp/Equipes-de-recherche/Ecologie-et-Genetique-des-Insectes) (INRA Igepp) in Rennes, France.
 
-My PhD aims are the strain level caracterization of the pea aphid symbionts, and the development of new tools for targetted metagenomic assembly
+Two projects of my PhD :
 
-####  <span style="color:indianred">**Disclaimer : website under construction**</span>
+* Strain level characterization of the pea aphid symbionts by analysis of SNP profiles (in revision in Microbiome)
+* Developpment of a method for reference guided assembly in metagenomic context ([in development](https://github.com/GATB/MindTheGap))
+
