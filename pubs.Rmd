@@ -1,0 +1,40 @@
+---
+title: "Publications"
+output: html_document
+---
+<br>
+
+
+### Peer reviewed publications
+
+
+* **Multi-scale characterization of symbiont diversity in the pea aphid complex through metagenomic approaches. <br>**
+  **C. Guyomar**, F. Legeai, E. Jousselin, C. Mougel, C. Lemaitre and JC. Simon  <br>
+  In revision in Microbiome, 2018
+  
+* **[Phylogenetic distribution, biogeography and the effects of land management upon bacterial non-specific acid phosphatase gene diversity and abundance.](https://link.springer.com/article/10.1007/s11104-017-3301-2)  <br>**
+  A. Neal Andrew, M. Blackwell, E. Akkari, **C. Guyomar**, I. Clark, P. Hirsch, 2017.  <br>
+  Plant and Soil 2017
+  
+* **[Land-use influences phosphatase gene microdiversity in soils.](https://onlinelibrary.wiley.com/doi/full/10.1111/1462-2920.13778) <br>**
+  A. Neal Andrew, M. Rossmann, C. Brearley, E. Akkari, **C. Guyomar**, I. Clark, E. Allen, P. Hirsch, 2017.  <br>
+  Environmental Microbiology 2017
+
+### Oral communications
+
+* **Multi-scale characterization of symbiont diversity in the pea aphid complex through metagenomic approaches*************** <br>
+  **C. Guyomar**, F. Legeai, C. Lemaitre, JC. Simon <br>
+  International conference on holobionts, Paris, 20/04/2017
+  
+* **Aphid microbiota, from field ecology to metagenomics**
+  **C. Guyomar**, JC. Simon
+  Journées BioGenOuest, Rennes , 14/12/2016
+
+### Posters
+
+* **C. Guyomar**, W. Delage, F. Legeai, C. Mougel, JC. Simon, C. Lemaitre. : [**Reference guided genome assembly in metagenomic samples**](documents/RECOMB_2018.pdf) ; RECOMB 2018, Paris
+
+* **C. Guyomar**, F. Legeai, C. Lemaitre, JC. Simon. : [**Multi-scale characterization of symbiont diversity in the pea aphid complex through metagenomic approaches**](documents/JOBIM_2017.pdf), JOBIM 2017, Lille
+
+
+

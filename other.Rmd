@@ -1,0 +1,34 @@
+---
+title: ""
+output: html_document
+---
+
+<br>
+
+### Teaching
+
+* ##### Statistical learnings
+  2017-2018 - Master 1, UFR SVE, Université Rennes 1 <br>
+  Statistical modelling and initiation to machine learning
+
+* ##### Simulation for biostatistics
+  2016 - Master 1 Santé publique <br>
+  Initiation to R programming, random variable simulations, stochastic simulation
+
+### Supervising 
+
+* ##### Wesley Delage (2017)
+  Master 2 Bioinformatique et génomique, Rennes<br>
+  Development of an innovative method based on a reference guided assembly for the genome reconstruction of a
+bacteriophage APSE
+
+### Scientific dissemination
+
+* [Une petite histoire de symbiose(s)](https://www.youtube.com/watch?v=3DRgLLITKUc)
+  * Festival Sciences en Court[s]
+    (3rd price)
+  * Festival BioInfuse
+  
+### Organization
+
+* Volunteer at RECOMB 2018

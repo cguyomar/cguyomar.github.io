@@ -1,0 +1,25 @@
+---
+title: " "
+output: 
+  html_document:
+    toc: no
+output_dir: "."
+
+---
+
+```{r,echo=F,eval=T}
+# Global options
+knitr::opts_chunk$set(eval=F)
+```
+<br>
+
+## About me
+
+<br>
+I am a bioinformatician, with a background in statistics and agronomy.
+
+I am currently a PhD student in [GenScale team](https://team.inria.fr/genscale/) (INRIA/IRISA) and [EGI team](https://www6.rennes.inra.fr/igepp/Equipes-de-recherche/Ecologie-et-Genetique-des-Insectes) (INRA Igepp) in Rennes, France.
+
+My PhD aims are the strain level caracterization of the pea aphid symbionts, and the development of new tools for targetted metagenomic assembly
+
+####  <span style="color:indianred">**Disclaimer : website under construction**</span>

@@ -1,0 +1,28 @@
+name: Cervin Guyomar
+navbar:
+  title: Cervin Guyomar
+  left:
+  - text: Home
+    href: index.html
+  - text: Publications
+    href: pubs.html
+  - text: Teaching and others
+    href: other.html
+  - icon: fa-download
+    text: Curriculum
+    href: documents/Guyomar_Cervin.pdf
+  right:
+  - icon: fa-envelope-o
+    href: mailto:cervin.guypomar@gmail.com
+  - icon: fa-github
+    href: https://github.com/cguyomar
+output:
+  html_document:
+    theme: cosmo
+    highlight: pygments
+    toc: no
+    toc_float: no
+    lib_dir: site_libs
+    self_contained: no
+output_dir: '.'
+
