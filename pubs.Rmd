@@ -22,13 +22,13 @@ output: html_document
 
 ### Oral communications
 
-* **Multi-scale characterization of symbiont diversity in the pea aphid complex through metagenomic approaches*************** <br>
+* **Multi-scale characterization of symbiont diversity in the pea aphid complex through metagenomic approaches** <br>
   **C. Guyomar**, F. Legeai, C. Lemaitre, JC. Simon <br>
   International conference on holobionts, Paris, 20/04/2017
   
-* **Aphid microbiota, from field ecology to metagenomics**
-  **C. Guyomar**, JC. Simon
-  Journées BioGenOuest, Rennes , 14/12/2016
+* **Aphid microbiota, from field ecology to metagenomics** <br>
+  **C. Guyomar**, JC. Simon <br>
+  Journées BioGenOuest, Rennes, 14/12/2016
 
 ### Posters
 
