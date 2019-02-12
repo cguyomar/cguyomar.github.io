@@ -8,9 +8,9 @@ output: html_document
 ### Peer reviewed publications
 
 
-* **Multi-scale characterization of symbiont diversity in the pea aphid complex through metagenomic approaches. <br>**
+* **[Multi-scale characterization of symbiont diversity in the pea aphid complex through metagenomic approaches.](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0562-9s) <br>**
   **C. Guyomar**, F. Legeai, E. Jousselin, C. Mougel, C. Lemaitre and JC. Simon  <br>
-  In revision in Microbiome, 2018
+  Microbiome, 2018
   
 * **[Phylogenetic distribution, biogeography and the effects of land management upon bacterial non-specific acid phosphatase gene diversity and abundance.](https://link.springer.com/article/10.1007/s11104-017-3301-2)  <br>**
   A. Neal Andrew, M. Blackwell, E. Akkari, **C. Guyomar**, I. Clark, P. Hirsch, 2017.  <br>

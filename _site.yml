@@ -13,7 +13,7 @@ navbar:
     href: documents/Guyomar_Cervin.pdf
   right:
   - icon: fa-envelope-o
-    href: mailto:cervin.guypomar@gmail.com
+    href: mailto:cervin.guyomar@gmail.com
   - icon: fa-github
     href: https://github.com/cguyomar
 output:
