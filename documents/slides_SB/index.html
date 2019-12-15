@@ -1,0 +1,4561 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulations en biostatistique</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Simulations en biostatistique">
+  <meta name="author" content="Cervin Guyomar">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  
+  <aside class="gdbar">
+    <img src="assets/img/rlogo.png">
+  </aside>
+  
+  <hgroup class="auto-fadein">
+    <h1>Simulations en biostatistique</h1>
+    <h2>M1 Santé Publique - 2016/2017</h2>
+    <p>Cervin Guyomar<br/>cervin.guyomar@irisa.fr</p>
+  </hgroup>
+  
+  <article></article>  
+  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>Pour interpréter des données de biostatistique, on peut avoir recours à de la <strong>simulation</strong></li>
+<li><p>Élaboration puis simulation d&#39;un modèle, et confrontation avec des données biologiques</p></li>
+<li><p>Nécessite des compétences informatiques particulières :
+<br>Comment simuler efficacement un modèle?
+<br>Comment &quot;produire la hasard&quot; par ordinateur</p></li>
+<li><p><strong>2 objectifs :</strong>
+<br> Apprentissage d&#39;un langage de programmation (R)
+<br> Des techniques utiles pour la simulation</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue dark" id="slide-2" style="background:;">
+  
+  <hgroup>
+    <h2>Introduction au langage R</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="quote" id="id" style="background:;">
+  
+  <hgroup>
+    <h2>R</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><q>Un <strong>langage informatique</strong> et un environnement pour <strong>la statistique</strong></q>
+<br>
+Caractéristiques :</p>
+
+<ul class = "build incremental">
+<li>Libre, gratuit, multi-plateformes</li>
+<li>Un langage de programmation</li>
+<li>Des fonctions de haut niveau dédiées à la statistique / la visualisation</li>
+<li>Utilisé dans le monde académique, en entreprise</li>
+<li>Installation : <a href="http://www.r-project.org">www.r-project.org</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  
+  <hgroup>
+    <h2>Apprentissage de R</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ol class = "build incremental">
+<li>Première session R</li>
+<li>Structures de données
+
+<ul>
+<li>Scalaires</li>
+<li>Vecteurs</li>
+<li>Matrices</li>
+<li>Listes</li>
+<li>data.frame</li>
+</ul></li>
+<li>Algorithmique
+
+<ul>
+<li>Structures de contrôle</li>
+<li>Fonctions</li>
+</ul></li>
+<li>Représentations graphiques</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  
+  <hgroup>
+    <h2>Première session R</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li><p>Console R : une ligne de commande</p></li>
+<li><p>&quot;Mode calculatrice&quot;</p>
+
+<pre><code class="r">2+2
+</code></pre>
+
+<pre><code>## [1] 4
+</code></pre></li>
+<li><p>Une fonction s&#39;utilise ainsi : <code>nom.fonction(argument1,argument2,...)</code></p>
+
+<pre><code class="r">sqrt(3)
+</code></pre>
+
+<pre><code>## [1] 1.732051
+</code></pre></li>
+<li><p><strong>Important</strong> : obtenir l&#39;aide d&#39;une fonction : <code>?sqrt ?round</code></p></li>
+<li><p>On peut stocker des données dans des <strong>objets</strong> dans la mémoire de l&#39;ordinateur </p></li>
+</ul>
+
+<pre><code class="r">  ma.variable &lt;- sqrt(3)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  
+  <hgroup>
+    <h2>Environnement de travail</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Répertorie courant : répertoire dans lequel travaille R (chargement de jeux de données...)</li>
+</ul>
+
+<pre><code class="r">getwd() # Affiche le répertoire courant
+setwd(&quot;C:/Users/cguyomar/Documents/monprojetR&quot;) # Change le répertoire courant
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  
+  <hgroup>
+    <h2>L&#39;éditeur de code</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>La ligne de commande ne suffit pas pour écrire des programmes</strong></p>
+
+<ul>
+<li>On écrit du code à l&#39;aide d&#39;un éditeur de texte dans un fichier source (.R)</li>
+<li>R exécute ce code dans l&#39;ordre</li>
+<li><code>#</code> Pour insérer des commentaires et mieux comprendre son code</li>
+</ul>
+
+<pre><code class="r"># mon premier programme R
+# 12 Septembre 2016
+# Cervin Guyomar
+
+input &lt;- readline(&#39;Entrez une valeur&#39;) # On demande une valeur à l&#39;utilisateur
+print(sqrt(input)) # On retourne la racine carrée de cette valeur
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  
+  <hgroup>
+    <h2>Quelques bonnes pratiques</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Ecrivez du code commenté (mais pas trop)</li>
+<li>Une ligne = une instruction (pas 2)</li>
+</ul>
+
+<pre><code class="r">print(sqrt(readline(&quot;Entrez une valeur&quot;))) # À éviter
+</code></pre>
+
+<ul>
+<li>Aérez votre code</li>
+<li>Indentez votre code</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety" id="slide-9" style="background:;">
+  
+  <hgroup>
+    <h2>Les scalaires</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li><p>Une variable peut être de classe:</p>
+
+<ul>
+<li>entier (integer)</li>
+<li>réel (numeric)</li>
+<li>logique (<code>TRUE</code> ou <code>FALSE</code>)</li>
+<li>facteur (variable qualitative)</li>
+<li>chaine de caractère</li>
+</ul></li>
+<li><p>Affectation avec l&#39;opérateur <code>&lt;-</code> (ou <code>=</code>)</p></li>
+<li><p>On peut vérifier la classe de tout objet avec la fonction <code>class</code></p></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r"># Numérique (numeric):
+value &lt;- cos(3+7)
+class(value)
+
+# Logique (logical)
+a &lt;- 2
+b &lt;- 3
+booleen &lt;- b &lt; a
+class(booleen)
+
+# Chaines de caractères (character)
+chaine &lt;- &quot;Une chaine de caractères&quot;
+class(chaine)
+</code></pre>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  
+  <hgroup>
+    <h2>Exercices sur les scalaires</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz-text well" data-answer="">
+  <ol>
+<li>Créez une première chaine de caractère qui contiendra &quot;Hello&quot; et une seconde qui contiendra &quot;World !&quot;</li>
+<li>Affichez la première</li>
+<li>Affichez la en majuscules dans la console</li>
+<li>Concaténez les deux chaines et stockez les dans une nouvelle variable</li>
+<li>Affichez le nombre de caractères que contient cette nouvelle chaine </li>
+<li>Récupérez en les 5 premiers caractères</li>
+</ol>
+
+<p><strong>Fonctions utiles : print, cat, toupper, paste, nchar, substring</strong></p>
+
+  <input type="text" class="quiz-answerbox"><br/>
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <pre><code class="r">  #1)
+  chaine1 &lt;- &quot;Hello&quot;
+  chaine2 &lt;- &quot;World !&quot;
+
+  #2)
+  chaine1 # ou
+  print(chaine1) # ou
+  cat(chaine1)
+
+  #3)
+  toupper(chaine1)
+
+  #4)
+  ma.chaine &lt;- paste(chaine1,chaine2,sep=&quot;&quot;)
+
+  #5)
+  nchar(ma.chaine)
+
+  #6)
+  substring(ma.chaine,1,5)
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety smallcode" id="slide-11" style="background:;">
+  
+  <hgroup>
+    <h2>Conversion de variables</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Il est parfois nécessaire de convertir une variable d&#39;une classe à une autre</p>
+
+<p>On utilise les fonctions <code>as.integer</code>, <code>as.numeric</code>, <code>as.factor</code>, <code>as.character</code>...</p>
+
+<pre><code class="r">  as.integer(12.9)
+</code></pre>
+
+<pre><code>## [1] 12
+</code></pre>
+
+<pre><code class="r">  as.numeric(&quot;neuf&quot;)
+</code></pre>
+
+<pre><code>## Warning: NAs introduced by coercion
+</code></pre>
+
+<pre><code>## [1] NA
+</code></pre>
+
+<pre><code class="r">  as.numeric(&quot;9&quot;)
+</code></pre>
+
+<pre><code>## [1] 9
+</code></pre>
+
+<pre><code class="r">  as.factor(&quot;modalité1&quot;)
+</code></pre>
+
+<pre><code>## [1] modalité1
+## Levels: modalité1
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  
+  <hgroup>
+    <h2>Conversion de variables</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Exercice : Théorème de Pythagore</strong></p>
+
+<p>Réaliser un programme qui demande à l&#39;utilisateur 2 longueurs d&#39;un triangle rectangle, et retourne celle de l&#39;hypothèé  use</p>
+
+<p>Fonctions utiles : <code>readline</code>, <code>print</code>, <code>^</code> (opérateur exposant)</p>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <p><strong>Solution</strong></p>
+
+<pre><code class="r">  a &lt;- readline(&#39;Entrez la première valeur&#39;)
+  b &lt;- readline(&#39;Entrez la seconde valeur&#39;)
+  class(a) # a et b sont des chaines de caractères : 
+           # impossible de réaliser des opérations avec des caractères
+
+  a &lt;- as.numeric(a) # On les convertit en numérique
+  b &lt;- as.numeric(b)
+
+  res &lt;- sqrt(a^2+b^2) # On calcule la longueur de l&#39;hypothénuse
+
+  res &lt;- paste(&quot;L&#39;hypothénuse a pour longueur : &quot;,res) # Le nombre est converti automatiquement en chaine de caractères
+  print(res)
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety" id="slide-13" style="background:;">
+  
+  <hgroup>
+    <h2>Les vecteurs</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Une suite d&#39;éléments de même nature (que des nombres, que des chaines de caractères...)</p>
+
+<p><strong>Construction</strong></p>
+
+<pre><code class="r">  vec &lt;- c(1,3.8,log(4)) # c : fonction de concaténation de plusieurs éléments
+  vec2 &lt;- rep(&quot;licorne&quot;,5) # fonction rep : répète un élément plusieurs fois
+  vec3 &lt;- rep(c(&quot;licorne&quot;,&quot;papillon&quot;),each=2,times=3)
+  vec4 &lt;- seq(0,1,0.1) # Séquence des valeurs de 0 à 1 par pas de 0.1
+</code></pre>
+
+<p><strong>Ajouter un élément à un vecteur</strong></p>
+
+<pre><code class="r">  vec &lt;- c(vec,0)
+  vec &lt;- c(1:4,&quot;toto&quot;) # Commentez
+</code></pre>
+
+<p><strong>Accéder aux éléments d&#39;un vecteur</strong></p>
+
+<pre><code class="r">  vec[1] # Première valeur
+  vec[-c(2,4)] # Tout sauf les valeurs 2 et 4
+  vec4[vec4 &gt; 0.5] # Commentez
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="smallcode ninety" id="slide-14" style="background:;">
+  
+  <hgroup>
+    <h2>Fonctions utiles pour les vecteurs</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">  vec &lt;- c(5,12,1,5,9,1)
+</code></pre>
+
+<p><br></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">  which(vec &lt; 6) # Indices des éléments &lt; 6
+</code></pre>
+
+<pre><code>## [1] 1 3 4 6
+</code></pre>
+
+<pre><code class="r">  which.min(vec)
+</code></pre>
+
+<pre><code>## [1] 3
+</code></pre>
+
+<pre><code class="r">  which.max(vec)
+</code></pre>
+
+<pre><code>## [1] 2
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">  order(vec)
+</code></pre>
+
+<pre><code>## [1] 3 6 1 4 5 2
+</code></pre>
+
+<pre><code class="r">  sort(vec) ; vec[order(vec)] # Éléments triés
+</code></pre>
+
+<pre><code>## [1]  1  1  5  5  9 12
+</code></pre>
+
+<pre><code>## [1]  1  1  5  5  9 12
+</code></pre>
+
+<pre><code class="r">  sample(vec,5) # 5 éléments au hasard sans remise
+</code></pre>
+
+<pre><code>## [1] 12  9  1  5  1
+</code></pre>
+
+<pre><code class="r">  sample(vec,replace=T,5) # avec remise
+</code></pre>
+
+<pre><code>## [1]  1  1  1 12  1
+</code></pre>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="sixtyfive" id="slide-15" style="background:;">
+  
+  <hgroup>
+    <h2>Exercice sur les vecteurs</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz-text well" data-answer="">
+  <ol>
+<li><p>Placez les entiers de 1 à 5 dans un vecteur (<code>1:5</code>)  <br>
+Ajoutez y les nombres 7 et 8.2 <br>
+Donner leurs carrés  (<code>^</code>)</p></li>
+<li><p>Créer un vecteur contenant 3 fois tous les entiers de 1 à 4</p></li>
+<li><p>Créer un vecteur contenant 1 fois &quot;A&quot;, 2 fois &quot;B&quot;, 3 fois &quot;C&quot;, etc. <br>
+Donnez sa longueur</p></li>
+<li><p>Créer un vecteur contenant 100 identifiants de patients sous la forme &quot;patient_1_A&quot;.  <br>
+Les identifiants sont uniques et compris entre 1 et 1000, la lettre est tirée au hasard  (avec remise) <br>
+Rangez les dans l&#39;ordre des identifiants</p></li>
+</ol>
+
+<p><strong>Fonctions utiles : <code>c()</code>, <code>rep()</code>, <code>LETTERS</code>, <code>paste()</code>, <code>sample()</code></strong></p>
+
+  <input type="text" class="quiz-answerbox"><br/>
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <p><strong>Solution</strong></p>
+
+<pre><code class="r"> # 1) 
+  vec &lt;- 1:5
+  vec &lt;- c(vec,7,8.2)
+  vec^2
+
+  # 2)
+  vec &lt;- rep(1:4,each=3) # 1,1,1,2,2,2...
+  vec &lt;- rep(1:4,times=3) # 1,2,3,4,1,2....
+
+  # 3)
+  vec &lt;- rep(LETTERS,times=1:26)
+  length(vec)
+
+  # 4)
+  num &lt;- sort(sample(1:1000,100))
+  lettre &lt;- sample(LETTERS,100,replace = T)
+  id.patients &lt;- paste(&quot;patient&quot;,num,lettre,sep=&quot;_&quot;)
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="sixtyfive" id="slide-16" style="background:;">
+  
+  <hgroup>
+    <h2>Exercice 2 sur les vecteurs</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz-text well" data-answer="">
+  <p>Créez les vecteurs suivants, que vous appellerez y1, y2, y3 et y4, avec d = 4 et e = 12 : <br>
+y1 : une suite d’indices de 1 à 30.<br>
+y2 : trois fois l’élément d, puis trois fois d au carré, puis trois fois la racine de d.<br>
+y3 : la séquence de 1 à 20 avec un pas de deux.<br>
+y4 : 10 chiffres compris entre 1 et 30 avec un intervalle constant.</p>
+
+<p><strong>Fonctions utiles : seq, rep</strong></p>
+
+  <input type="text" class="quiz-answerbox"><br/>
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <p><strong>Solution</strong></p>
+
+<pre><code class="r">  y1 &lt;- 1:30
+  d &lt;- 4
+  e &lt;- 12
+
+  y2 &lt;- c(rep(y1,times=3),rep(d^2,3),rep(sqrt(d),3))
+
+  y3 &lt;- seq(1,20,by = 2)
+
+  y4 &lt;- seq(1,30,length.out = 10)
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  
+  <hgroup>
+    <h2>Les facteurs</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Une classe de données permettant de stocker les modalités d&#39;une variable qualitative</p>
+
+<pre><code class="r">cheveux &lt;- factor(c(&quot;blond&quot;,&quot;brun&quot;,&quot;blond&quot;,&quot;roux&quot;,&quot;brun&quot;,&quot;brun&quot;))
+levels(cheveux)
+</code></pre>
+
+<pre><code>## [1] &quot;blond&quot; &quot;brun&quot;  &quot;roux&quot;
+</code></pre>
+
+<pre><code class="r">levels(cheveux) &lt;- c(levels(cheveux),&quot;chatain&quot;)
+
+table(cheveux)
+</code></pre>
+
+<pre><code>## cheveux
+##   blond    brun    roux chatain 
+##       2       3       1       0
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  
+  <hgroup>
+    <h2>Les matrices</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Un vecteur auquel on affecte des dimensions (nombre de colonnes et de lignes)</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p>Construction</p>
+
+<pre><code class="r">  mat &lt;- matrix(1:20,ncol=5)
+  mat
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    5    9   13   17
+## [2,]    2    6   10   14   18
+## [3,]    3    7   11   15   19
+## [4,]    4    8   12   16   20
+</code></pre>
+
+<pre><code class="r">  dim(mat) # Dimensions de la matrice
+</code></pre>
+
+<pre><code>## [1] 4 5
+</code></pre>
+
+<pre><code class="r">  # Voir aussi ncol et nrow
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Extraction</p>
+
+<pre><code class="r">  first.col &lt;- mat[,1]
+  sec.row &lt;- mat[2,]
+  element &lt;- mat[3,4]
+  mat[mat[,1] &gt; 2,] # Commentez
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    3    7   11   15   19
+## [2,]    4    8   12   16   20
+</code></pre>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  
+  <hgroup>
+    <h2>Fonctions utiles pour les matrices</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">  mat &lt;- matrix(1:12,ncol=4)
+
+  t(mat) # Transposée
+  colSums(mat) ; rowSums(mat) # Somme par lignes/colonnes
+  print(mat)
+  print(dim(mat)) # Dimensions de la matrice
+</code></pre>
+
+<h3>Fonction apply</h3>
+
+<p>Applique une fonction donnée à chaque ligne/colonne et retourne les résultats</p>
+
+<pre><code class="r"> apply(mat,1,mean) # Moyenne de chaque ligne (même effet que colMeans)
+</code></pre>
+
+<pre><code>## [1]  9 10 11 12
+</code></pre>
+
+<pre><code class="r">  apply(mat,2,max) # Maximum de chaque colonne (même effet que rowMeans)
+</code></pre>
+
+<pre><code>## [1]  4  8 12 16 20
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="fifty" id="slide-21" style="background:;">
+  
+  <hgroup>
+    <h2>Exercice sur les matrices</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz-text well" data-answer="">
+  <ol>
+<li>Créer la matrice A suivante : 
+\[\begin{array}
+{rrr}
+-3 & 5 & 6 \\\
+-1 & 2 & 2 \\\
+1 & -1 & -1
+\end{array}
+\]</li>
+<li>Afficher la dimension de A, son nombre de colonnes, son nombre de lignes et sa longueur ;</li>
+<li>Extraire la seconde colonne de A, puis la première ligne ;</li>
+<li>Extraire l’élément en troisième position à la première ligne ;</li>
+<li>Extraire la sous-matrice de dimension 2 × 2 du coin inférieur de A</li>
+<li>Calculer la somme des colonnes puis des lignes de A ;</li>
+<li>Rajouter le vecteur 1 2 3 à droite de la matrice A et stocker le résultat dans un objet appelé B ;</li>
+<li>Retirer la première et la troisième ligne de B ;</li>
+<li>Ajouter le scalaire 10 à A ;</li>
+<li>Diviser tous les éléments de la matrice A par 2 ;</li>
+</ol>
+
+  <input type="text" class="quiz-answerbox"><br/>
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <p><strong>Solution</strong></p>
+
+<pre><code class="r"> # 1) 
+  A &lt;- matrix(c(-3,-1,1,5,2,-1,6,2,-1),nrow=3)
+
+  # 2)
+  dim(A)
+  ncol(A)
+  nrow(A)
+  length(A)
+
+  # 3)
+  A[,2]
+  A[1,]  
+
+  # 4)
+  A[1,3]  
+
+  # 5)
+  A[2:3,2:3]
+
+  # 6)
+  colSums(A) # équivalent à apply(A,2,sum)
+  rowSums(A) # équivalent à apply(A,1,sum)
+
+  # 7)
+  B &lt;- cbind(A,1:3)
+
+  # 8) 
+  B &lt;- B[-c(1,3),]
+
+  # 9)
+  A &lt;- A + 10
+
+  # 10)
+  A &lt;- A/2
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="sixtyfive" id="slide-22" style="background:;">
+  
+  <hgroup>
+    <h2>Exercice 2 sur les matrices</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz-text well" data-answer="">
+  <ol>
+<li><p>Créez 2 matrices de votre choix (dimensions et valeurs)</p></li>
+<li><p>Calculez le premier terme du produit matriciel de ces 2 matrices.</p></li>
+<li><p>Créer une matrice contenant 10 fois la ligne &quot;1, 2, 3&quot;, puis 1à fois la ligne &quot;4,5,6&quot;</p></li>
+<li><p>Créez une matrice avec en colonnes 3 matières et en ligne 20 élèves, et contenant pour chaque élève et matière une note prise au hasard entre 0 et 20. Nommez colonnes et lignes (noms de matière et identifiants de type élève1 élève2...)
+<br> Donnez la moyenne et la médiane pour chaque matière
+<br> Ajoutez une colonne calculant la moyenne pondérée par les coefficients de votre choix. (utilisez éventuellement la fonction <code>sweep</code> si vous voulez bien faire)</p></li>
+</ol>
+
+  <input type="text" class="quiz-answerbox"><br/>
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <p><strong>Solution</strong></p>
+
+<pre><code class="r"> # 1) 
+  mat1 &lt;- matrix(1:9,ncol=3)
+  mat2 &lt;- matrix(3:11,ncol=3)
+
+  # 2)
+  print(sum(mat1[1,] * mat2[,1]))
+  print((mat1 %*% mat2)[1,1])
+
+  # 3)
+  vec1 &lt;- rep(1:3,times=10)
+  vec2 &lt;- rep(4:6,times=10)
+
+  mat1 &lt;- matrix(vec1,ncol=3)
+  mat2 &lt;- matrix(vec2,ncol=3)
+
+  mat &lt;- rbind(mat1,mat2)
+
+  # 4)
+  notes &lt;- sample(1:20,size = 60,replace=T)
+  notes &lt;- matrix(notes,ncol=3)
+
+  noms.lignes &lt;- paste0(&quot;élève&quot;,1:20)
+  rownames(notes) &lt;- noms.lignes
+  colnames(notes) &lt;- c(&quot;Francais&quot;,&quot;Maths&quot;,&quot;Bio&quot;)
+
+  ## Calcul de la moyenne pondérée
+
+  coef &lt;- c(1,2,3)
+
+  # Avec sweep : 
+  notes.coef &lt;- sweep(notes,2,coef,FUN=&quot;*&quot;) # On a multiplié chaque colonne par son coefficient
+  moyennes &lt;- rowSums(notes.coef)/sum(coef)
+  notes &lt;- cbind(notes,moyennes)
+  colnames(notes)[4] &lt;- &quot;Moyenne pondérée&quot;
+
+  #  Sans sweep
+#   moyennes &lt;- (notes[,1]*coef[1]+notes[,2]*coef[2]+notes[,3]*coef[3])/sum(coef)
+#   notes &lt;- cbind(notes,moyennes)
+#   colnames(notes)[4] &lt;- &quot;Moyenne pondérée&quot;
+
+  ## Moyenne et médiane par matière
+  colMeans(notes)
+  apply(notes,2,median)
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety" id="slide-23" style="background:;">
+  
+  <hgroup>
+    <h2>Les listes</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Un &quot;fourre-tout&quot; : objets de différents types : scalaires, matrices, caractères, numériques, listes...</p>
+
+<p><strong>Construction</strong></p>
+
+<pre><code class="r">  ma.liste &lt;- list(12,&quot;Licorne&quot;,1:10)
+  ma.liste
+</code></pre>
+
+<pre><code>## [[1]]
+## [1] 12
+## 
+## [[2]]
+## [1] &quot;Licorne&quot;
+## 
+## [[3]]
+##  [1]  1  2  3  4  5  6  7  8  9 10
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety" id="slide-24" style="background:;">
+  
+  <hgroup>
+    <h2>Les listes</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Un &quot;fourre-tout&quot; : objets de différents types : scalaires, matrices, caractères, numériques, listes...
+Les éléments peuvent être nommés (ou pas)</p>
+
+<p><strong>Construction</strong></p>
+
+<pre><code class="r">  ma.liste &lt;- list(12,&quot;Licorne&quot;,1:10)
+  ma.liste &lt;- list(nombre = 12,chaine = &quot;Licorne&quot;,matrice = matrix(1:12,nrow=3)) # éléments nommés
+</code></pre>
+
+<p><strong>Accès aux éléments</strong></p>
+
+<pre><code class="r">  ma.liste[[1]]
+</code></pre>
+
+<pre><code>## [1] 12
+</code></pre>
+
+<pre><code class="r">  ma.liste$chaine
+</code></pre>
+
+<pre><code>## [1] &quot;Licorne&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  
+  <hgroup>
+    <h2>Fonctions apply sur des listes</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>Exécute une fonction sur chaque élément de la liste et retourne le résultat</h3>
+
+<pre><code class="r">  ma.liste &lt;- list(12,&quot;Licorne&quot;,1:10)
+  lapply(ma.liste,FUN=length) # Résultats sous forme de listes
+</code></pre>
+
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 1
+## 
+## [[3]]
+## [1] 10
+</code></pre>
+
+<pre><code class="r">  sapply(ma.liste,length) # Si possible, simplifie les résultats sous forme de vecteur ou matrice
+</code></pre>
+
+<pre><code>## [1]  1  1 10
+</code></pre>
+
+<pre><code class="r">  # D&#39;autres fonctions : tapply, mapply...
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety smallcode" id="slide-26" style="background:;">
+  
+  <hgroup>
+    <h2>Les data.frame</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Forme particulière de liste : adaptée aux jeux de données Individus x variable</p>
+
+<pre><code class="r">  v1 &lt;- c(&quot;H&quot;,&quot;F&quot;,&quot;F&quot;,&quot;H&quot;,&quot;F&quot;)
+  v2 &lt;- c(25,30,18,55,40)
+  v3 &lt;- c(175,152,164,160,159)
+  data &lt;- data.frame(sexe=v1,age=v2,taille=v3)
+
+  data[,1]
+</code></pre>
+
+<pre><code>## [1] H F F H F
+## Levels: F H
+</code></pre>
+
+<pre><code class="r">  data$sexe
+</code></pre>
+
+<pre><code>## [1] H F F H F
+## Levels: F H
+</code></pre>
+
+<pre><code class="r">  data[2,]
+</code></pre>
+
+<pre><code>##   sexe age taille
+## 2    F  30    152
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  
+  <hgroup>
+    <h2>Fonctions utiles pour les data.frame</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">  summary(data) # Informations essentielles sur les différentes variables présentes
+   nrow(data) ; ncol(data) ; dim(data) # Dimensions
+
+   colnames(data) ; rownmaes(data) # Noms de lignes/colonnes
+   data[&#39;nomligne1&#39;,] ; data[,&quot;nomcol2&quot;] ; data$nomcol2 
+   # Possible de sélectionner des lignes/colonnes par leur nom
+</code></pre>
+
+<p>Aggrégation de lignes</p>
+
+<pre><code class="r">  aggregate(data[,2:3],by=list(data$sexe),FUN=mean) # Age moyen pour chaque sexe
+</code></pre>
+
+<pre><code>##   Group.1      age   taille
+## 1       F 29.33333 158.3333
+## 2       H 40.00000 167.5000
+</code></pre>
+
+<p>Les fonctions apply s&#39;appliquent comme sur les matrices (<code>apply</code>) ou les listes (<code>lapply</code>,<code>sapply</code>...)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  
+  <hgroup>
+    <h2>Exercices sur les data.frame</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Chargez le jeu de données situé à l&#39;adresse <code>http://math.agrocampus-ouest.fr/infoglueDeliverLive/digitalAssets/73505_decath.txt</code></p>
+
+<p>Fonction <code>read .table</code></p>
+
+<p>Options utiles : </p>
+
+<ul>
+<li><code>file</code> : emplacement du fichier à lire</li>
+<li><code>sep</code> : Séparateur de champs (colonnes). Souvent <code>;</code>,<code>,</code> ou <code>\t</code> (tabulation)</li>
+<li><code>dec</code> : Séparateur décimal. <code>.</code> ou <code>,</code></li>
+<li><code>header</code> : Présence ou non d&#39;un en tête avec les noms de colonnes</li>
+<li><code>row.names</code> : Numéro de la colonne contenant les noms de ligne (<code>NA</code> sinon)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  
+  <hgroup>
+    <h2>Exercices sur les data.frame</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Solution :</strong>
+decat &lt;- read.table(&quot;<a href="http://math.agrocampus-ouest.fr/infoglueDeliverLive/digitalAssets/73505_decath.txt%22,header=T,sep=%22%5Ct%22,row.names=1">http://math.agrocampus-ouest.fr/infoglueDeliverLive/digitalAssets/73505_decath.txt&quot;,header=T,sep=&quot;\t&quot;,row.names=1</a>)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  
+  <hgroup>
+    <h2>Exercice sur les data.frame</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz-text well" data-answer="">
+  <ol>
+<li><p>Affichez un résumé du jeu de données. Décrire ce qu&#39;il contient</p></li>
+<li><p>Quel est le meilleur temps en 1500m ?</p></li>
+<li><p>Donnez le nombre d&#39;athlètes ayant participé à chaque compétition, et comparez les nombres de points marqués dans les 2 compétitions</p></li>
+<li><p>Donnez les résultats du francais Romain Barras</p></li>
+<li><p>Récupérez les performances des athlètes ayant réalisé plus de 8500 points</p></li>
+</ol>
+
+  <input type="text" class="quiz-answerbox"><br/>
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <p><strong>Solution</strong></p>
+
+<pre><code class="r"> decathlon &lt;- read.table(&quot;http://math.agrocampus-ouest.fr/infoglueDeliverLive/digitalAssets/73505_decath.txt&quot;,header=T,sep=&quot;\t&quot;,row.names=1)
+
+   # 1)
+   summary(decathlon)
+
+   # 2)
+   min(decathlon$`1500m`)
+
+   # 3)
+   table(decathlon$Competition)
+
+   aggregate(decathlon$Points,by=list(decathlon$Competition),FUN = summary)
+   # Ou :
+   summary(decathlon[decathlon$Competition==&#39;Decastar&#39;,]$Points)
+   summary(decathlon[decathlon$Competition==&#39;OlympicG&#39;,]$Points)
+
+   # 4)
+   decathlon[&#39;BARRAS&#39;,]
+
+   # 5)
+   decathlon[decathlon$Points&gt;8500,]
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue dark" id="slide-31" style="background:;">
+  
+  <hgroup>
+    <h2>Algorithmique</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Introduction à R </p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  
+  <hgroup>
+    <h2>Les fonctions</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>On a utilisé jusqu&#39;ici des fonctions intégrées à R</p>
+
+<p>Mais on peut créer nos propres fonctions.</p>
+
+<p>Intérêts :</p>
+
+<ul class = "build incremental">
+<li><strong>Factorisation du code</strong> : On peut réutiliser le même code à plusieurs endroits</li>
+<li><strong>Lisibilité</strong> : On &quot;cache&quot; les détails du programme</li>
+<li><strong>Structuration</strong> : on décompose un problème en plusieurs étapes plus simples</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  
+  <hgroup>
+    <h2>Créer ses fonctions</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>2 Étapes</strong> :</p>
+
+<ul>
+<li>Définir une fonction. &quot;L&#39;apprendre&quot; à R</li>
+<li>L&#39;appeler</li>
+</ul>
+
+<pre><code class="r">   ma.fonction &lt;- function(argument1=defaut1,argument2,argument3...){
+     # Opérations
+     # Tout ce qui se passe ici n&#39;a aucun effet en dehors de la fonction
+     return(resulat)
+   }
+
+   res.fonction &lt;- ma.fonction(arg1,arg2,arg3...)
+</code></pre>
+
+<ul>
+<li>Veiller à ne pas utiliser de variables exterieures à la fonction sans les mettre en argument</li>
+<li>Pour retourner plusieurs résultats, il faut les mettre dans une liste</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-34" style="background:;">
+  
+  <hgroup>
+    <h2>Exercices sur les fonctions</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz-text well" data-answer="">
+  <p><strong>Exercice 1</strong> : Écriver une fonction qui retourne le périmètre, puis le périmètre et l&#39;aire d&#39;un rectangle</p>
+
+<p>Transformez la fonction pour qu&#39;elle puisse faire la même chose pour un carré, sans rentrer les 2 longueurs</p>
+
+<p><strong>Exercice 2</strong> : Écrivez une fonction qui prend en entrée une matrice et qui divise par 2 toutes les valeurs supérieurs à 5</p>
+
+  <input type="text" class="quiz-answerbox"><br/>
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <pre><code class="r"># 1) 
+   calc.aire &lt;- function(l,L=l){
+     perimetre &lt;- 2*l+2*L
+     aire &lt;- l*L
+     return(list(perimetre=perimetre,aire=aire))
+   }
+
+# 2)
+   mat.transform &lt;- function(mat){
+      mat[mat &gt; 5] &lt;- mat[mat &gt; 5]/2
+      return(mat)
+   }
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  
+  <hgroup>
+    <h2>Des structures conditionelles</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code>Si condition
+  alors operation
+</code></pre>
+
+<p>En langage R : </p>
+
+<pre><code class="r">   value &lt;- as.numeric(readline())
+   if (value &gt; 0){
+     print(&quot;le nombre donné est positif&quot;)
+   }
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-36" style="background:;">
+  
+  <hgroup>
+    <h2>Des structures conditionelles</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code>Si condition
+  alors operation
+Si autre condition
+  alors operation
+Sinon
+  alors operation
+</code></pre>
+
+<p>En langage R : </p>
+
+<pre><code class="r">   value &lt;- as.numeric(readline())
+   if (value &gt; 0){
+     print(&quot;le nombre donné est positif&quot;)
+   } else if (value == 0){
+     print(&quot;Le nombre donné est nul&quot;)
+   } else {
+     &quot;Le nombre donné est négatif&quot;
+   }
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  
+  <hgroup>
+    <h2>Opérateurs logiques</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <table><thead>
+<tr>
+<th><strong>Opérateur</strong></th>
+<th><strong>Fonction</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>&gt;</code> (<code>&lt;</code>)</td>
+<td>Strictement supérieur (inférieur)</td>
+</tr>
+<tr>
+<td><code>&gt;=</code> <code>&lt;=</code></td>
+<td>Supérieur (inférieur)</td>
+</tr>
+<tr>
+<td><code>==</code></td>
+<td>égal</td>
+</tr>
+<tr>
+<td><code>!condition</code></td>
+<td>inverse</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>et</td>
+</tr>
+<tr>
+<td>`</td>
+<td></td>
+</tr>
+<tr>
+<td><code>%in%</code></td>
+<td>Appartenance</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-38" style="background:;">
+  
+  <hgroup>
+    <h2>Exercice</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz-text well" data-answer="">
+  <p>Écrivez une fonction qui prend en entrée un age, et renvoie si il correspond à un personne mineure ou majeure. </p>
+
+<p>Bonus : Écrivez une fonction qui réaliser la même tâche, avec une date en entrée. Voir <code>Sys.Date()</code> et <code>as.Date()</code></p>
+
+  <input type="text" class="quiz-answerbox"><br/>
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <pre><code class="r">   is.majeur &lt;- function(age){
+     if (!is.numeric(age)){
+       cat(&quot;Entrez l&#39;age au format numérique&quot;)
+       return(NULL)
+     } else{
+       if (age &gt;= 18){
+         return(TRUE)
+       } else {
+         return(FALSE)
+       }
+     }
+   }
+
+   is.majeur &lt;- function(date_naissance){
+     # On essaye de vérifier que le format de la date est le bon
+     if (is.character(date_naissance)==FALSE){
+       cat(&quot;Entrez une date au format année-mois-jour ou année/mois/jour&quot;)
+       return(NULL)
+     } else {
+       date.split &lt;- strsplit(date_naissance,split=&quot;&quot;)[[1]]                             # 3 conditions à vérifier
+       if (nchar(date_naissance) != 10 ||                                               # exactement 10 caractères
+           !(date.split[5] %in% c(&quot;/&quot;,&quot;-&quot;) &amp;&amp; date.split[8] %in% c(&quot;-&quot;,&quot;/&quot;)) ||         # Des / ou - en position 5 et 8
+           sum(!(date.split[c(1:4,6:7,9:10)] %in% as.character(0:9))) != 0) {           # Des chiffres ailleurs
+         cat(&quot;Entrez une date au format année-mois-jour ou année/mois/jour&quot;)
+       } else {
+             age &lt;- Sys.Date() - as.Date(date_naissance)
+             if (age &gt; 18*365){
+               return(TRUE)
+             } else { 
+               return(FALSE)}
+           }
+     }
+   }
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-39" style="background:;">
+  
+  <hgroup>
+    <h2>Exercice</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz-text well" data-answer="">
+  <p>Écrivez un solveur d&#39;équations du second degré de type 
+\[ 
+ax\^2 + bx +c =0
+\]</p>
+
+<ul>
+<li>Demandez une saisie utilisateur. Il faudra exécuter votre code en 2 fois : d&#39;abord la lecture des paramètres, puis le calcul (S&#39;inspirer du corrigé sur le théorème de Pythagore)</li>
+<li>On ne cherche que les solutions réelles</li>
+<li>Si possible, gérez un maximum de cas possibles (mauvaises saisies de l&#39;utilisateur par exemple)</li>
+</ul>
+
+  <input type="text" class="quiz-answerbox"><br/>
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <pre><code class="r">input &lt;- readline(&quot;Entrez les coefficients a,b et c dans l&#39;ordre, séparés par des &#39;;&#39;&quot;)
+coefs &lt;- strsplit(input,&quot;;&quot;)[[1]] # Strsplit renvoie une liste, on ne récupère que le premier élément
+if (length(coefs)!=3){
+  print(&#39;Il faut entrer 3 coefficients séparés par des &quot;;&quot;&#39;)
+} else{
+  coefs &lt;- as.numeric(coefs)
+  if (sum(is.na(coefs))&gt;0){
+    print(&quot;Entrez des coefficients numériques&quot;)
+  }
+  else{
+    a &lt;- coefs[1]
+    b &lt;- coefs[2]
+    c &lt;- coefs[3]
+    ## Les coefficients sont valides, on peut résoudre l&#39;équation
+    if (a==0 &amp;&amp; b==0 &amp;&amp; c==0){
+      print(&quot;Tout x est solution&quot;)
+    } else {
+      delta &lt;- b^2 - 4*a*c
+      if (delta &gt; 0){
+      print(paste(&quot;2 Solutions réelles :&quot;,(-b-sqrt(delta))/(2*A),&quot;et&quot;,(-b+sqrt(delta))/(2*A)))
+    } else if (delta == 0){
+      print(paste(&quot;Une solution double :&quot;,-b/2*a))
+    } else {
+      print(&quot;Pas de solutions réelles&quot;)
+    }
+    }
+  }
+}
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="sixtyfive" id="slide-40" style="background:;">
+  
+  <hgroup>
+    <h2>Les boucles</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>Les boucles permettent de répéter plusieurs fois une opération.</p>
+
+<p><strong>Boucle for :</strong></p>
+
+<pre><code class="r">for (i in 1:10){
+  print(paste(&quot;Tour de boucle : &quot;,i))
+}
+</code></pre>
+
+<p><strong>Boucle while :</strong></p>
+
+<pre><code class="r">i &lt;- 0 # Initialisation
+while (i &lt; 5){
+  print(i)
+  i &lt;- i+1 
+  # Il faut faire évoluer la condition,
+  # sinon la boucle est infinie !
+}
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./for.png" alt="">
+<img src="./while.png" alt="50"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="fifty" id="slide-41" style="background:;">
+  
+  <hgroup>
+    <h2>Exercices sur les boucles</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz-text well" data-answer="">
+  <p>1) À l’aide d&#39;une boucle <code>while</code>, créer une boucle qui permet de calculer la factorielle d’un nombre ;
+Faites la même chose avec une boucle <code>for</code></p>
+
+<p>Créez une fonction qui retourne la factorielle d&#39;un nombre. Comparez avec la fonction <code>factorial</code></p>
+
+<p><br\>
+2) Parcourir les entiers de 1 à 20 à l’aide d’une boucle for en affichant dans la console à chaque
+itération si le nombre courant est pair </p>
+
+<p>Faites de même avec une boucle <code>while</code></p>
+
+<p>Obtenez le même résultat sans boucle</p>
+
+<p><br\>
+3) Choisir un nombre mystère entre 1 et 100, et le stocker dans un objet que l’on nommera <code>nombre.mystere</code>. Ensuite, créer une boucle qui à chaque itération effectue un tirage aléatoire d’un entier compris entre 1 et 100. Tant que le nombre tiré est différent du nombre mystère, la boucle doit continuer. À la sortie de la boucle, une variable que l’on appellera <code>nb_tirages</code> contiendra le nombre de tirages réalisés pour obtenir le nombre mystère</p>
+
+<p>Utiliser le code de la question précédente pour réaliser la fonction <code>trouver_nombre</code>, qui, lorsqu’on lui donne un nombre compris entre 1 et 100, retourne le nombre de tirages aléatoires d’entiers compris entre 1 et 100 nécessaires avant de tirer le nombre mystère ;</p>
+
+<p>En utilisant une boucle for, faire appel 1000 fois à la fonction <code>trouver_nombre()</code> qui vient d’être créée. À chaque itération, stocker le résultat dans un élément d’un vecteur que l’on appellera <code>nb_essais_rep</code>. Enfin, afficher la moyenne du nombre de tirages nécessaires pour retrouver le nombre magique.</p>
+
+  <input type="text" class="quiz-answerbox"><br/>
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <pre><code class="r"># 1)
+
+k &lt;- 1
+factorielle &lt;- k
+nombre &lt;- sample(1:100)
+
+while (k &lt;= nombre){
+  factorielle &lt;- factorielle*k
+  k &lt;- k+1
+}
+</code></pre>
+
+<pre><code>## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+
+## Warning in while (k &lt;= nombre) {: the condition has length &gt; 1 and only the
+## first element will be used
+</code></pre>
+
+<pre><code class="r">factorielle &lt;- 1
+for (i in 1:nombre){
+  factorielle &lt;- factorielle*i
+}
+</code></pre>
+
+<pre><code>## Warning in 1:nombre: numerical expression has 100 elements: only the first used
+</code></pre>
+
+<pre><code class="r">ma.factorielle &lt;- function(x){
+  k &lt;- 1
+  res &lt;- k
+  while (k &lt;= x){
+    res &lt;- res*k
+    k &lt;- k+1
+  }
+  return(res)
+}
+
+
+# 2)
+for (i in 1:20){
+  if (i %%2 ==0){
+    print(i)
+  }
+}
+</code></pre>
+
+<pre><code>## [1] 2
+## [1] 4
+## [1] 6
+## [1] 8
+## [1] 10
+## [1] 12
+## [1] 14
+## [1] 16
+## [1] 18
+## [1] 20
+</code></pre>
+
+<pre><code class="r">compteur &lt;- 1
+max &lt;- 20
+while (compteur &lt;=20){
+  if (compteur%%2 == 0){
+    print(compteur)
+  }
+  compteur &lt;- compteur+1
+}
+</code></pre>
+
+<pre><code>## [1] 2
+## [1] 4
+## [1] 6
+## [1] 8
+## [1] 10
+## [1] 12
+## [1] 14
+## [1] 16
+## [1] 18
+## [1] 20
+</code></pre>
+
+<pre><code class="r">(1:20)[(1:20)%%2 ==0]
+</code></pre>
+
+<pre><code>##  [1]  2  4  6  8 10 12 14 16 18 20
+</code></pre>
+
+<pre><code class="r"># 3)
+
+nombre.mystere &lt;- sample(1:100,1)
+tirage &lt;- 0
+nb_tirages &lt;- 0
+while (tirage != nombre.mystere){
+  tirage &lt;- sample(1:100,1)
+  nb_tirages &lt;- nb_tirages + 1
+}
+
+trouver_nombre &lt;- function(k){
+  tirage &lt;- 0
+  nb_tirages &lt;- 0
+  while (tirage != k){
+    tirage &lt;- sample(1:100,1)
+    nb_tirages &lt;- nb_tirages + 1
+  }
+  return(nb_tirages)
+}
+
+res &lt;- c()
+for (i in 1:1000){
+  res &lt;- c(res,trouver_nombre(5))
+}
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-42" style="background:;">
+  
+  <hgroup>
+    <h2>Exercice sur les boucles</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div class="quiz-text well" data-answer="">
+  <p>Créez une fonction qui lance une partie d&#39;un &quot;jeu&quot;</p>
+
+<p>Une valeur entre 1 et 100 est choisie automatiquement</p>
+
+<p>Le joueur saisit une valeur, on lui dit si elle est trop grande ou trop petite. Il gagne une fois q&#39;uil a découvert la bonne valeur.</p>
+
+  <input type="text" class="quiz-answerbox"><br/>
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-explanation">
+  <pre><code class="r">stop_ou_encore &lt;- function(){
+  nombre &lt;- sample(1:100,1)
+  reponse &lt;- as.numeric(readline(&quot;Entrez une première valeur&quot;))
+
+  while(reponse != nombre){
+    if (reponse &gt; nombre){
+      cat(&quot;Trop grand !, recommencez&quot;)
+    } else if (reponse &lt; nombre) {
+      cat(&quot;Trop petit !, recommencez&quot;)
+    }
+    reponse &lt;- readline(&quot;&quot;)
+  }
+
+  cat(&quot;Gagné !&quot;)
+}
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-43" style="background:;">
+  
+  <hgroup>
+    <h2>Fonction <code>plot</code></h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">  plot(x=-30:30,y=(-30:30)^2)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-44-1.png" title="plot of chunk unnamed-chunk-44" alt="plot of chunk unnamed-chunk-44" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-44" style="background:;">
+  
+  <hgroup>
+    <h2>Principaux paramètres</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">  plot(x=-30:30,y=(-30:30)^2,
+       type=&quot;l&quot;, # type de tracé : l: ligne, p :points, b : points+lignes, h : barres d&#39;histogramme ... 
+       col=&quot;red&quot;, # couleur du tracé
+       lwd=2, # épaisseur du trait
+       main=&quot;Mon titre&quot;, # Titre du graphe
+       xlab=&quot;Abscisses&quot;,ylab=&quot;Ordonnées&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-45-1.png" title="plot of chunk unnamed-chunk-45" alt="plot of chunk unnamed-chunk-45" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-45" style="background:;">
+  
+  <hgroup>
+    <h2>Plusieurs lignes sur un même graphe</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Un premier <code>plot</code> puis on ajoute de nouvelles lignes avec <code>lines</code> (fonctionne comme plot mais sans recréer de nouveau graphique) ou <code>ablines</code> (lignes verticales ou horizontales)</li>
+</ul>
+
+<pre><code class="r">  plot(x=-30:30,y=(-30:30)^2,cex=0.5,pch=3)
+  lines(x=-30:30,y=2*(-30:30)^2,col=&quot;red&quot;)
+  abline(v=0,col=&quot;blue&quot;)
+
+  legend(x=&quot;bottomright&quot;,legend=c(&quot;X2&quot;,&quot;2X2&quot;),fill=c(&quot;black&quot;,&quot;red&quot;))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-46-1.png" title="plot of chunk unnamed-chunk-46" alt="plot of chunk unnamed-chunk-46" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue dark" id="slide-46" style="background:;">
+  
+  <hgroup>
+    <h2>Simulation de variables aléatoires</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="sixtyfive" id="slide-47" style="background:;">
+  
+  <hgroup>
+    <h2>Générateurs de nombre aléatoires</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Comment générer le hasard avec des algorithmes?</li>
+</ul>
+
+<p>Le hasard = réalisatins indépendantes d&#39;une avriable aléatoire uniforme dans [0,1]</p>
+
+<ul>
+<li>Pas de hasard dans les ordinateurs : on se contente d&#39;un <strong>pseudo hasard</strong></li>
+</ul>
+
+<p>On utilise un procédé déterminisite, mais qui donne l&#39;impression de hasard.</p>
+
+<ul>
+<li>On génère une suite u<sub>1</sub>, u<sub>2</sub>... telle que les \(u_{i}\) ont l&#39;air de suivre une loi uniforme.</li>
+<li>En pratique, on définit une <strong>seed</strong> \(u_{0}\) prise dans un ensemble \(M\) et une application de \(M\) dans \(M\) qui satisfait certaines conditions.</li>
+<li>Biais possibles : 
+
+<ul>
+<li>Période courte</li>
+<li>Distribution peu uniforme</li>
+<li>etc...</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-48" style="background:;">
+  
+  <hgroup>
+    <h2>Exemple de générateur pseudo aléatoire</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>Méthode de Von Neumann (méthode du carré médian)</h3>
+
+<p>Seed : \(1111\)</p>
+
+<p><br/>
+\(1111*1111 = 1234321\)</p>
+
+<p>Chiffres du milieu : \(3432\) (sortie du générateur)</p>
+
+<p><br/>
+\(3432*3432 = 11778624\)</p>
+
+<p>Chiffres du milieu : \(7786\) (sortie du générateur)</p>
+
+<p><br/>
+<strong>Limites</strong>
+Pas la méthode la plus fiable pour des simulations
+\(0000\) est un <strong>état absorbant</strong></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-49" style="background:;">
+  
+  <hgroup>
+    <h2>Autre exemple : générateurs congruentiels linéaires</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Algorithme largement utilisé</p>
+
+<p>\[
+u\_{n+1} = (a * u\_{n} + b)~mod~c
+\]
+Où \(a,b,c\) doivent être judicieusement choisis</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-50" style="background:;">
+  
+  <hgroup>
+    <h2>Générateurs pseudo aléatoires</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Il y en a d&#39;autres (Mersenne Twister...)</li>
+<li>Applications : simulation, cryptographie</li>
+<li>De nombreux tests statistiques peuvent être utilisés pour tester l&#39;uniformité de la séquence (Chi-2, Kolmogorov-Smirnov...)</li>
+<li>Dans R :</li>
+</ul>
+
+<pre><code class="r">  set.seed(42)
+  runif(1)
+</code></pre>
+
+<pre><code>## [1] 0.914806
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="fifty" id="slide-51" style="background:;">
+  
+  <hgroup>
+    <h2>Exercice sur des données épidémiologiques</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <blockquote>
+<p>A retrospective sample of males in a heart-disease high-risk region of the Western Cape, South Africa. There are roughly two controls per case of CHD. Many of the CHD positive men have undergone blood pressure reduction treatment and other programs to reduce their risk factors after their CHD event. In some cases the measurements were made after these treatments. These data are taken from a larger dataset, described in  Rousseauw et al, 1983, South African Medical Journal. </p>
+
+<ul>
+<li>sbp     systolic blood pressure</li>
+<li>tobacco     cumulative tobacco (kg)</li>
+<li>ldl     low densiity lipoprotein cholesterol</li>
+<li>adiposity</li>
+<li>famhist     family history of heart disease (Present, Absent)</li>
+<li>typea       type-A behavior</li>
+<li>obesity</li>
+<li>alcohol     current alcohol consumption</li>
+<li>age     age at onset</li>
+<li>chd     response, coronary heart disease</li>
+</ul>
+
+<ol>
+<li>Importer le fichier sous R. Affichez son résumé.</li>
+<li>Créer une nouvelle variable recodant la variable famhist en 0/1.</li>
+<li>Créer une nouvelle variable recodant la variable age en 4 classes à partir des quartiles.</li>
+<li>Créer une nouvelle variable recodant la variable age en classes à partir des déciles.</li>
+<li>Calculer les proportions de malades par classes d’âge obtenues par la question 4.</li>
+<li>Créer une nouvelle variable recodant la variable age en classes de 5 ans.</li>
+<li>Calculer les proportions de malades par classes d’âge obtenues par la question 6.</li>
+<li>Créer une nouvelle variable Tabac oui/non.</li>
+<li>Faire l’analyse descriptive de chaque variable (numériquement et graphiquement).</li>
+<li>Faire le tableau de contingence Age en 4 classes / Malade.</li>
+<li>Randomiser les malades en considérant 2 traitements.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-52" style="background:;">
+  
+  <hgroup>
+    <h2>Rappel sur les variables aléatoires</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Variable aléatoire</strong> : Application de \(\Omega\) dans R</p>
+
+<p>Une V.A. peut être :</p>
+
+<ul>
+<li><p>Discrète : elle prend ses valeurs dans un ensemble fini</p>
+
+<p>Exemple : lancer de dé</p></li>
+<li><p>Continue : elle prend ses valeurs dans un intervalle</p>
+
+<p>Exemple : taille d&#39;un étudiant</p></li>
+</ul>
+
+<p>Le caractère aléatoire d&#39;une variable aléatoire est défini par une <strong>Loi de probabilité</strong> à laquelle peuvent être associés des paramètres</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-53" style="background:;">
+  
+  <hgroup>
+    <h2>Exemples de lois discrètes</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>- Loi de Bernoulli</h3>
+
+<p>Prend la valeur 0 ou 1 suivant une probabilité \(p\)</p>
+
+<p>Exemple : pile ou face (\(p=0.5\))</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-54" style="background:;">
+  
+  <hgroup>
+    <h2>Exemples de lois discrètes</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>Loi binomiale</h3>
+
+<p>Donne le nombre de succès de \(n\) exériences de Bernoulli de paramètre \(p\)</p>
+
+<p>\(ie\) \(n\) lancers de pièce (\(p=0.5\))</p>
+
+<p>\[
+\forall k \in [1,n] , P(X=k) = C\^k\_n * p\^k * (1-p)\^{N-k} 
+\]</p>
+
+<p>-&gt; Représenter graphiquement la distribution de probabilité de la loi \(\mathcal{B}(50,0.2)\)</p>
+
+<p>(Probabilités de chaque modalité d&#39;une variable aléatoire qui suit cette loi)</p>
+
+<p><strong>Fonctions R</strong></p>
+
+<ul>
+<li><code>dloi</code> (<code>dunif</code>,<code>dnorm</code>...) : Densité de probabilité</li>
+<li><code>rloi</code> : Fonction de répartition</li>
+<li><code>qloi</code> : Quantiles de la loi</li>
+<li><code>rloi</code> : Génération aléatoire suivant la loi </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-55" style="background:;">
+  
+  <hgroup>
+    <h2>Distribution de probabilité</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><code>dbinom(x,size=n,prob=p)</code> : \(\mathcal{P}(X=x)\) avec \(X \hookrightarrow \mathcal{B}(n,p)\)</p>
+
+<pre><code class="r">probs.density &lt;- dbinom(x=1:50,size=50,prob=0.2)
+
+par(bg=NA)
+plot(x=1:50,y=probs.density,type=&quot;h&quot;,ylab=&quot;p(X=x)&quot;,main=&quot;Distribution de probabilité d&#39;une loi binomiale de paramètres n=50 et p=0.2&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-48-1.png" title="plot of chunk unnamed-chunk-48" alt="plot of chunk unnamed-chunk-48" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-56" style="background:;">
+  
+  <hgroup>
+    <h2>Fonction de répartition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><code>pbinom(x,size=n,prob=p)</code> : \(\mathcal{P}(X \le x)~avec~X \hookrightarrow \mathcal{B}(n,p)\)</p>
+
+<pre><code class="r">probs.dist &lt;- pbinom(q=1:50,size=50,prob=0.2)
+
+par(bg=NA)
+plot(x=1:50,y=probs.dist,type=&quot;s&quot;,ylab=&quot;F(x) = P(X &lt;= x)&quot;,main=&quot;Fonction de répartition d&#39;une loi binomiale de paramètres n=50 et p=0.2&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-49-1.png" title="plot of chunk unnamed-chunk-49" alt="plot of chunk unnamed-chunk-49" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-57" style="background:;">
+  
+  <hgroup>
+    <h2>Exemples de lois discrètes</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>- Loi de Bernoulli</h3>
+
+<h3>- Loi binomiale</h3>
+
+<h3>- Loi multinomiale</h3>
+
+<p>Généralisation à plus de 2 modalités</p>
+
+<p>\(n\) lancers de dé (avec \(p1=p2=p3=p4=p5=p6=1/6\))</p>
+
+<p>Voir <code>dmultinom</code>, <code>rmultinom</code></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-58" style="background:;">
+  
+  <hgroup>
+    <h2>Lois continues</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>\(\mathcal{P}(X=x) = 0\) Car il y a un nombre infini de modalités</p>
+
+<p>La distribution de probabilité de la loi se traduit par une <strong>densité de probabilité</strong></p>
+
+<p>\[ \mathcal{P}(a \le X \le b) = \displaystyle \int\_{a}\^{b} f(x) \, \mathrm{d}x \]</p>
+
+<p>La probabilité de l&#39;évènement &#39; \(a \le X \le b\) &#39; est égale à l&#39;aire sous la courbe (intégrale) de la fonction de densité entre a et b</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-59" style="background:;">
+  
+  <hgroup>
+    <h2>Densité de la loi normale</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">  par(bg=NA)
+  x &lt;- seq(-4,4,0.01) 
+  plot(x,dnorm(x),type=&quot;l&quot;)
+  polygon(x=c(1,1.5,1.5,1),y=c(-0,-0,dnorm(1.5),dnorm(1)),col =&quot;skyblue&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-50-1.png" title="plot of chunk unnamed-chunk-50" alt="plot of chunk unnamed-chunk-50" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-60" style="background:;">
+  
+  <hgroup>
+    <h2>Fonction de répartition de la loi normale</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">  par(bg=NA)
+  x &lt;- seq(-4,4,0.01) 
+  plot(x,pnorm(x),type=&quot;l&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-51-1.png" title="plot of chunk unnamed-chunk-51" alt="plot of chunk unnamed-chunk-51" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-61" style="background:;">
+  
+  <hgroup>
+    <h2>Théorème Central Limite (TCL)</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Si on lance un <strong>grand</strong> nombre de fois une pièce (équilibrée). On aura <strong>en moyenne</strong> 50% de pile et 50% de face</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-62" style="background:;">
+  
+  <hgroup>
+    <h2>Théorème Central Limite (TCL)</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Si on lance un <strong>grand</strong> nombre de fois une pièce (équilibrée). On aura <strong>en moyenne</strong> 50% de pile et 50% de face</p>
+
+<p><strong>Loi des grands nombres :</strong></p>
+
+<p>Soit \(X\_1\), \(X\_2\)... \(X\_n\) n variables indépendantes suivant la même loi de probabilité d&#39;espérance \(\mu\)</p>
+
+<p>\(X\_i\) : ième réalisation d&#39;une expérience aléatoire</p>
+
+<p>\(\mu\) : espérance de cette expérience = ce que l&#39;on cherche à déterminer</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-63" style="background:;">
+  
+  <hgroup>
+    <h2>Théorème Central Limite (TCL)</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Si on lance un <strong>grand</strong> nombre de fois une pièce (équilibrée). On aura <strong>en moyenne</strong> 50% de pile et 50% de face</p>
+
+<p><strong>Loi des grands nombres :</strong></p>
+
+<p>Soit \(X\_1\), \(X\_2\)... \(X\_n\) n variables indépendantes suivant la même loi de probabilité d&#39;espérance \(\mu\)</p>
+
+<p>\(X\_i\) : ième réalisation d&#39;une expérience aléatoire</p>
+
+<p>\(\mu\) : espérance de cette expérience = ce que l&#39;on cherche à déterminer</p>
+
+<p><strong>La loi des grands nombres dit que la moyenne des \(X\_i\) converge vers \(\mu\)</strong></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-64" style="background:;">
+  
+  <hgroup>
+    <h2>Théorème Central Limite (TCL)</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Si on lance un <strong>grand</strong> nombre de fois une pièce (équilibrée). On aura <strong>en moyenne</strong> 50% de pile et 50% de face</p>
+
+<p><strong>Loi des grands nombres :</strong></p>
+
+<p>Soit \(X\_1\), \(X\_2\)... \(X\_n\) n variables indépendantes suivant la même loi de probabilité d&#39;espérance \(\mu\)</p>
+
+<p>\(X\_i\) : ième réalisation d&#39;une expérience aléatoire</p>
+
+<p>\(\mu\) : espérance de cette expérience = ce que l&#39;on cherche à déterminer</p>
+
+<p><strong>La loi des grands nombres dit que la moyenne des \(X\_i\) converge vers \(\mu\)</strong></p>
+
+<p>Le théorème central limite précise de quelle manière cette somme converge vers \(\mu\), il donne la loi de probabilité de cette moyenne des \(X\_i\)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-65" style="background:;">
+  
+  <hgroup>
+    <h2>Théorème Central Limite (TCL)</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><em>&quot;Le théorème central limite établit la convergence en loi de la somme d&#39;une suite de variables aléatoires vers la loi normale. Intuitivement, ce résultat affirme que toute somme de variables aléatoires indépendantes et identiquement distribuées tend vers une variable aléatoire gaussienne.&quot;</em></p>
+
+<p><strong>Théorème</strong></p>
+
+<p>Soit \(X\_n\) une suite de variables aléatoires de même loi d&#39;espérance \(\mu\) et d&#39;écart-type \(\sigma\).</p>
+
+<p>Soit \(\overline{X\_{n}} = \frac{\sum\_{i=1}\^n X\_i}{n}\) ,
+pour n suffisamment grand, cette variable aléatoire suit une loi normale de paramètres \(\mu\) et \(\sigma\^2 / n\)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-66" style="background:;">
+  
+  <hgroup>
+    <h2>Inversion de la fonction de répartition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Problème</strong> : On sait générer des lois uniformes (générateurs pseudo aléatoires)</p>
+
+<p>Mais comment générer des lois plus complexes?</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-67" style="background:;">
+  
+  <hgroup>
+    <h2>Inversion de la fonction de répartition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Problème</strong> : On sait générer des lois uniformes (générateurs pseudo aléatoires)</p>
+
+<p>Mais comment générer des lois plus complexes?</p>
+
+<p><strong>Solution :</strong> Méthode d&#39;inversion de la fonction de répartition</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-68" style="background:;">
+  
+  <hgroup>
+    <h2>Inversion de la fonction de répartition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Problème :</strong> On sait générer des lois uniformes (générateurs pseudo aléatoires)</p>
+
+<p>Mais comment générer des lois plus complexes?</p>
+
+<p><strong>Solution :</strong> Méthode d&#39;inversion de la fonction de répartition</p>
+
+<p><strong>Théorème</strong> : Soit \(X\) une variable aléatoire de fonction de répartition \(F\) strictement croissante, on a :
+\[
+F\^{-1}(X) \hookrightarrow \mathcal\{U\}\_\{[0:1]\}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-69" style="background:;">
+  
+  <hgroup>
+    <h2>Inversion de la fonction de répartition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Problème :</strong> On sait générer des lois uniformes (générateurs pseudo aléatoires)</p>
+
+<p>Mais comment générer des lois plus complexes?</p>
+
+<p><strong>Solution :</strong> Méthode d&#39;inversion de la fonction de répartition</p>
+
+<p><strong>Théorème</strong> : Soit \(X\) une variable aléatoire de fonction de répartition \(F\) strictement croissante, on a :
+\[
+F\^{-1}(X) \hookrightarrow \mathcal\{U\}\_\{[0:1]\}
+\]
+<br/></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-70" style="background:;">
+  
+  <hgroup>
+    <h2>Inversion de la fonction de répartition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Problème :</strong> On sait générer des lois uniformes (générateurs pseudo aléatoires)</p>
+
+<p>Mais comment générer des lois plus complexes?</p>
+
+<p><strong>Solution :</strong> Méthode d&#39;inversion de la fonction de répartition</p>
+
+<p><strong>Théorème</strong> : Soit \(X\) une variable aléatoire de fonction de répartition \(F\) strictement croissante, on a :
+\[
+F\^{-1}(X) \hookrightarrow \mathcal\{U\}\_\{[0:1]\}
+\]
+<br/>
+<strong>Méthode</strong>
+<br>
+Si on sait inverser la fonction de répartition \(F\), on a juste à simuler la loi uniforme, et à lui appliquer \(F\^\{-1\}\) pour obtenir une simulation de \(X\)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-71" style="background:;">
+  
+  <hgroup>
+    <h2>Inversion de la fonction de répartition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Exemple : Simulation d&#39;une loi logistique</strong></p>
+
+<p>Simuler en utilisant cette méthode une variable aléatoire suivant une loi logistique. Qui prend comme paramètre \(m\) et \(s\)</p>
+
+<p>Sa fonction de répartition est :
+\[
+F(Y) = \frac\{1\}\{1+exp(-\frac\{y-m\}\{s\})\}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-72" style="background:;">
+  
+  <hgroup>
+    <h2>Solution</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Avec X suivant une loi uniforme sur [0,1]</p>
+
+<p>\[
+Y=s*log(\frac\{X\}\{1-X\})+m
+\]</p>
+
+<pre><code class="r">  par(bg=NA,mar=c(3,2,2,1))
+
+  a &lt;- seq(-10,20,0.1)
+  plot(a,plogis(a,3,2),type=&quot;l&quot;)
+  lines(a,1/(1+exp(-(a-3)/2)),col=2)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-52-1.png" title="plot of chunk unnamed-chunk-52" alt="plot of chunk unnamed-chunk-52" style="display: block; margin: auto;" /></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-73" style="background:;">
+  
+  <hgroup>
+    <h2>Verification dans R</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r"># Avec rlogis
+par(bg=NA)
+set.seed(42)
+hist(rlogis(10000,3,2),breaks = 50)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-53-1.png" alt="plot of chunk unnamed-chunk-53"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">par(bg=NA)
+set.seed(42)
+x &lt;- runif(10000)
+hist(3+2*log(x)-2*log(1-x),breaks = 50)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-54-1.png" alt="plot of chunk unnamed-chunk-54"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-74" style="background:;">
+  
+  <hgroup>
+    <h2>Inversion de la fonction de répartition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Autre exemple : Loi de Cauchy</strong></p>
+
+<p>Loi d&#39;une variable aléatoire qui est le quotient de deux variables aléatoires normales indépendamment centrées mais de même écart type</p>
+
+<ul class = "build incremental">
+<li>Elle prend deux paramètres :
+
+<ul>
+<li>\(x\_0\) : valeur autour de laquelle est centrée la loi</li>
+<li>\(a\) : &quot;étalement&quot; de la loi</li>
+</ul></li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul class = "build incremental">
+<li><center><strong>Densité</strong> :</center> \[ f(x)=\frac 1\pi \frac{a}{a\^2 + (x-x_0)\^2} \]</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>f</p>
+
+<ul class = "build incremental">
+<li><center><strong>Fonction de répartition</strong> :</center> \[F(x)=\frac{1}{\pi} \arctan\left(\frac{x-x_0}{a}\right)+\frac{1}{2}\]</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="seventy" id="slide-75" style="background:;">
+  
+  <hgroup>
+    <h2>Inversion de la fonction de répartition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Inversons la fonction de répartition :</p>
+
+<p>\[
+F(x)=\frac{1}{\pi} \arctan\left(\frac{x-x_0}{a}\right)+\frac{1}{2}
+\]</p>
+
+<ul class = "build incremental">
+<li>\[
+\iff \arctan\left(\frac{x-x_0}{a}\right) = \pi \left( F(X) - \frac{1}{2} \right)
+\]</li>
+<li>\[
+\iff \frac{x-x_0}{a} = tan \left[ \pi \left( F(X) - \frac{1}{2} \right) \right]
+\]</li>
+<li><p>\[
+\iff x = a~tan \left[ \pi \left( F(X) - \frac{1}{2} \right) \right] +x_0
+\]</p></li>
+<li><p>\[\mathbf{F\^{-1}(x) = a~tan \left( \pi(x-\frac{1}{2}) \right) +x_0}\]</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="smallcode seventy" id="slide-76" style="background:;">
+  
+  <hgroup>
+    <h2>Inversion de la fonction de répartition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Application dans R :</p>
+
+<pre><code class="r">  ma.rcauchy &lt;- function(n,a=1,x0=0){
+    ech.unif &lt;- runif(n) # Echantillon de la loi uniforme sur 0,1
+    ech.cauchy &lt;- a*tan(pi*(ech.unif-0.5))+x0 # On applique F-1
+    return(ech.cauchy)
+  }
+par(bg=NA,mar=c(2,2,2,1)) # mise en page
+echantillon &lt;- ma.rcauchy(1000)
+hist(echantillon,breaks=seq(min(echantillon),max(echantillon)+1,0.5),xlim=c(-30,30),probability=T,col=&quot;skyblue4&quot;,border=NA)
+lines(x=seq(-30,30,0.1),y=dcauchy(x=seq(-30,30,0.1)),col=&quot;skyblue2&quot;,lwd=3)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-55-1.png" title="plot of chunk unnamed-chunk-55" alt="plot of chunk unnamed-chunk-55" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-77" style="background:;">
+  
+  <hgroup>
+    <h2>Méthode de Box-Muller</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>On ne sait pas inverser la fonction de répartition de la loi normale</p>
+
+<p>Comment générer des valeurs suivant une loi normale?</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-78" style="background:;">
+  
+  <hgroup>
+    <h2>Méthode de Box-Muller</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>On ne sait pas inverser la fonction de répartition de la loi normale</p>
+
+<p>Comment générer des valeurs suivant une loi normale?</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><strong>Intuition :</strong></p>
+
+<p><img src="assets/fig/unnamed-chunk-56-1.svg" alt="plot of chunk unnamed-chunk-56"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><br>
+<br>
+Les abscisses et ordonnées \(x\) et \(y\) suivent deux lois normales centrées réduites \(X\_{1}\) et \(X\_{2}\) </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-79" style="background:;">
+  
+  <hgroup>
+    <h2>Rappel de mathématiques</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>Coordonnées cartésiennes et coordonnées polaires</h3>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p>Un point ayant pour coordonnées cartésiennes \(x\) et \(y\) a pour coordonnées polaires :</p>
+
+<p>\[
+\rho = \sqrt{x\^2+y\^2}
+\]
+\[
+\theta = arctan(y/x)
+\]</p>
+
+<p>On peut aussi écrire 
+\[
+x = \rho~cos(\theta))
+\]
+\[
+y = \rho~sin(\theta))
+\]</p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./polaire.png" alt=""></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-80" style="background:;">
+  
+  <hgroup>
+    <h2>Intuition - Suite</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-57-1.svg" alt="plot of chunk unnamed-chunk-57"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Générer des coordonnées polaires suivant des lois normales centrées réduites équivaut à simuler des points en coordonnées polaires.</p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-81" style="background:;">
+  
+  <hgroup>
+    <h2>Méthode de Box Muller.</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>On pose 
+\[
+\Theta = arctan(X\_2 / X\_1)~et~R=\sqrt{X\_1\^2+X\_2\^2}
+\]</p>
+
+<p>On peut réécrire la densité du couple \(X\_1,X\_2\) en appliquant ce changement de variable
+\[
+f\_{R,\Theta}(\rho,\theta) = \frac{1}{2\pi}*exp(\frac{-\rho\^2}{2}) \rho ~ d\rho ~ d\theta
+\]</p>
+
+<p>On reconnait à gauche la densité d&#39;une loi uniforme sur \([O,2\pi]\), et à droite celle d&#39;une loi exponentielle de paramètre \(0.5\)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-82" style="background:;">
+  
+  <hgroup>
+    <h2>Simulation avec la méthode de B-M :</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>On simule :</p>
+
+<ul>
+<li>\(\Theta\) qui suit une loi uniforme sur \([0,2\pi]\)</li>
+<li>\(R\) telle que \(R\^2\) suit une loi exponentielle de paramètre 0.5.</li>
+</ul>
+
+<p>\(X=R~cos\Theta\) et \(Y=R~sin\Theta\) suivent une loi normale centrée réduite</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="smallercode" id="slide-83" style="background:;">
+  
+  <hgroup>
+    <h2>Implémentation</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">ma.rnorm &lt;- function(n,mu=0,sd=1){
+  U1 &lt;- runif(n)
+  U2 &lt;- runif(n)
+  R &lt;- sqrt(-(1/0.5)*log(U1))
+  Theta &lt;- U2*2*pi
+  centree.reduite &lt;- R*cos(Theta)
+  simul &lt;- mu + sd*centree.reduite
+  return(simul)
+}
+par(bg=NA,mar=c(2,2,1,1))
+hist(ma.rnorm(10000),breaks=100,probability = T,border=NA,col=&quot;grey&quot;)
+xseq &lt;- seq(-10,10,0.1)
+lines(x=xseq,y=dnorm(xseq),col=&quot;indianred&quot;,lwd=2)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-58-1.png" alt="plot of chunk unnamed-chunk-58"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety" id="slide-84" style="background:;">
+  
+  <hgroup>
+    <h2>Méthode de rejet</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p><strong>Contexte :</strong> On veut encore simuler une variable aléatoire \(X\) de densité \(f\), dans le cas où la méthode d&#39;inversion de la fonction de répartition n&#39;est pas utilisable (\(F\) difficile à inverser)</p></li>
+<li><p><strong>Idée :</strong> Prenons une loi proche de celle que l&#39;on veut simuler.</p></li>
+<li><p><strong>Exemple :</strong> Loi Normale centrée réduite (à simuler) et loi de Cauchy</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety" id="slide-85" style="background:;">
+  
+  <hgroup>
+    <h2>Méthode de rejet</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li><p><strong>Contexte :</strong> On veut encore simuler une variable aléatoire \(X\) de densité \(f\), dans le cas où la méthode d&#39;inversion de la fonction de répartition n&#39;est pas utilisable (\(F\) difficile à inverser)</p></li>
+<li><p><strong>Idée :</strong> Prenons une loi proche de celle que l&#39;on veut simuler.</p></li>
+<li><p><strong>Exemple :</strong> Loi Normale centrée réduite (à simuler) et loi de Cauchy</p></li>
+</ul>
+
+<p><img src="assets/fig/unnamed-chunk-59-1.svg" title="plot of chunk unnamed-chunk-59" alt="plot of chunk unnamed-chunk-59" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety" id="slide-86" style="background:;">
+  
+  <hgroup>
+    <h2>Méthode de rejet - intuition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>On multiplie la densité de la loi de Cauchy (=loi instrumentale) de manière à ce qu&#39;elle soit toujours au dessus de la loi normale (loi objectif)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety" id="slide-87" style="background:;">
+  
+  <hgroup>
+    <h2>Méthode de rejet - intuition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>On multiplie la densité de la loi de Cauchy (=loi instrumentale) de manière à ce qu&#39;elle soit toujours au dessus de la loi normale (loi objectif)</p>
+
+<p><img src="assets/fig/unnamed-chunk-60-1.svg" title="plot of chunk unnamed-chunk-60" alt="plot of chunk unnamed-chunk-60" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety" id="slide-88" style="background:;">
+  
+  <hgroup>
+    <h2>Méthode de rejet - intuition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>On multiplie la densité de la loi de Cauchy (=loi instrumentale) de manière à ce qu&#39;elle soit toujours au dessus de la loi normale (loi objectif)</p>
+
+<p>Simulons des données suivant la loi instrumentale</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety" id="slide-89" style="background:;">
+  
+  <hgroup>
+    <h2>Méthode de rejet - intuition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>On multiplie la densité de la loi de Cauchy (=loi instrumentale) de manière à ce qu&#39;elle soit toujours au dessus de la loi normale (loi objectif)</p>
+
+<p>Simulons des données suivant la loi instrumentale</p>
+
+<p><img src="assets/fig/unnamed-chunk-61-1.svg" title="plot of chunk unnamed-chunk-61" alt="plot of chunk unnamed-chunk-61" style="display: block; margin: auto;" /></p>
+
+<ul class = "build incremental">
+<li><strong>Pour obtenir la loi objectif, il faut rejetter certaines valeurs</strong></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="ninety" id="slide-90" style="background:;">
+  
+  <hgroup>
+    <h2>Méthode de rejet - intuition</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>On multiplie la densité de la loi de Cauchy (=loi instrumentale) de manière à ce qu&#39;elle soit toujours au dessus de la loi normale (loi objectif)</p>
+
+<p>Simulons des données suivant la loi instrumentale</p>
+
+<p><img src="assets/fig/unnamed-chunk-62-1.svg" title="plot of chunk unnamed-chunk-62" alt="plot of chunk unnamed-chunk-62" style="display: block; margin: auto;" /></p>
+
+<p><strong>Pour obtenir la loi objectif, il faut rejetter certaines valeurs</strong></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="seventy" id="slide-91" style="background:;">
+  
+  <hgroup>
+    <h2>Méthode de rejet</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Méthode :</strong> On veut simuler <font color = "800517">\(X\)</font> ayant pour densité \(f\), on suppose qu&#39;il existe une densité \(g\) telle que \(f \leq c*g\), et qu&#39;on sait simuler une variable aléatoire <font color = "6698FF">\(Y\)</font> de densité \(g\)</p>
+
+<ul class = "build incremental">
+<li>On tire une réalisation de \(Y\), ainsi qu&#39;une réalisation de  \(U\) qui suit la loi Uniforme sur \([0,1]\)</li>
+<li>Si \(U > \frac{f(Y)}{c*g(Y)}\) on rejette la valeur, sinon on la garde comme un tirage de X</li>
+</ul>
+
+<p><img src="assets/fig/unnamed-chunk-63-1.svg" title="plot of chunk unnamed-chunk-63" alt="plot of chunk unnamed-chunk-63" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-92" style="background:;">
+  
+  <hgroup>
+    <h2>Choix de la valeur de c</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p><strong>Rappel :</strong> On cherche \(c\) tel que \(\forall x , c*g(x) > f(x)\)</p></li>
+<li><p>\[
+\frac{f(x)}{g(x)} = \sqrt{\frac{\pi}{2}}(1+x\^2)e\^{-x\^2/2} \leq \sqrt{\frac{2\pi}{e}}
+\]</p></li>
+<li><p><img src="assets/fig/unnamed-chunk-64-1.png" title="plot of chunk unnamed-chunk-64" alt="plot of chunk unnamed-chunk-64" style="display: block; margin: auto;" /></p></li>
+<li><p>On choisit $c=\sqrt{\frac{2\pi}{e}} \simeq 1.52 $. Plus on prend \(c\) petit, moins on rejette de valeurs et plus la simulation est rapide.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="smallcode" id="slide-93" style="background:;">
+  
+  <hgroup>
+    <h2>Implémentation dans R de la méthode de rejet</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">rnorm.par.rejet &lt;- function(n, mu, sigma) {
+    compteur &lt;- 0  # Nombre de valeurs simulées
+    res &lt;- rep(NA, n)  # Contiendra les valeurs simulées par rejet
+    c &lt;- 1.52
+
+    while (compteur &lt; n) {
+        x &lt;- rcauchy(n)
+        u &lt;- runif(n)
+        success &lt;- x[u &lt;= dnorm(x)/1.52 * dcauchy(x)]
+
+        if (compteur + length(success) &gt; n) {
+            # On a généré trop de succès par rapport à n -&gt; on retire des valeurs
+            success &lt;- success[1:(n - compteur)]
+        }
+        res[(compteur + 1):(compteur + length(success))] &lt;- success
+        compteur &lt;- compteur + length(success)
+    }
+    return(sigma * res + mu)
+}
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue dark" id="slide-94" style="background:;">
+  
+  <hgroup>
+    <h2>Chaines de Markov</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>Simulation de variables aléatoires</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-95" style="background:;">
+  
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p>Jusqu&#39;ici, on a simulé des tirages aléatoires indépendants.</p>
+
+<ul>
+<li>1000 tirages indépendants suivant une loi normale.
+Le résultat d&#39;un tirage n&#39;influe pas sur le résultat du suivant</li>
+</ul></li>
+<li><p>Dans la réalité, la probabilité de nombreux événements dépend de celles d&#39;autres événements</p>
+
+<ul>
+<li>La météo d&#39;un jour dépend de celle des jours précédents</li>
+</ul></li>
+<li><blockquote>
+<p>Une <strong>chaine de Markov</strong>, ou processus de Markov est une séquence \(X\_1,X\_2...\) de variables aléatoires où la probabilité que \(X\_i\) prenne une valeur \(x\) ne dépend que de \(X_{i-1}\)</p>
+</blockquote></li>
+<li><blockquote>
+<p><em>&quot;Le futur dépend du présent, mais pas du passé&quot;</em></p>
+</blockquote></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="seventy" id="slide-96" style="background:;">
+  
+  <hgroup>
+    <h2>Chaine de Markov : exemple</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Un généraliste surveille l&#39;observance de la prise quotidienne d’un médicament chez un patient. Il constate que </p>
+
+<ul class = "build incremental">
+<li><p>S&#39;il oublie son médicament un jour donné, la probabilité qu&#39;il l&#39;oublie le lendemain est de \(1/7\)</p></li>
+<li><p>S&#39;il ne l&#39;oublie pas, la probabilité est de \(2/7\)</p></li>
+<li><p>Chaine de Markov à deux états :</p>
+
+<ul>
+<li>Événement \(A\) : le patient a oublié son médicament</li>
+<li>Événement \(B\) : le patient n&#39;a pas oublié son médicament</li>
+</ul></li>
+<li><ul>
+<li>\(A_n\) : le patient a oublié son médicament au jour \(n\)</li>
+</ul>
+
+<ul>
+<li>\(B_n\) : le patient a pris son médicament au jour n</li>
+</ul></li>
+<li><p>Par définiton, \(P(A\_n)+P(B\_n)=1\)</p></li>
+<li><p>Fixons \(P(A_1) = 1/2\)</p></li>
+<li><ul>
+<li>Quelle est la probabilité d&#39;oubli au jour 2?</li>
+</ul>
+
+<ul>
+<li>Quelle est la probabilité de la trajectoire \((A\_0,B\_1,A\_2)\)</li>
+<li>Simulez 1000 patients pendant 1 an, et affichez sur un graphique la proportion d&#39;oubli parmi eux pour chaque jour de l&#39;année</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-97" style="background:;">
+  
+  <hgroup>
+    <h2>Chaine de Markov : exemple</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>\(P(A\_i | A\_{i-1}) = 1/7\)</li>
+<li>\(P(A\_i | B\_{i-1}) = 2/7\)</li>
+<li>\(P(B\_i | A\_{i-1}) = 6/7\)</li>
+<li>\(P(B\_i | B\_{i-1}) = 5/7\)</li>
+</ul>
+
+<ul class = "build incremental">
+<li><p>On peut représenter cette chaine de Markov par un <strong>graphe</strong>
+Une flèche donne la probabilité de passage d&#39;un état à un autre.</p></li>
+<li><p><img src="Markovkate_01.svg" alt="Drawing" style="width: 300px;" align="right"/></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-98" style="background:;">
+  
+  <hgroup>
+    <h2>Chaine de Markov : exemple</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>On peut aussi écrire la <strong>matrice de transition</strong> associée au graphe
+Pour un système à n états : matrice à n lignes et n colonnes</p>
+
+<p><img src="matrice.png" alt="Drawing" style="width: 300px;" align="center"/></p>
+
+<ul>
+<li>\(P(A\_i | B\_{i-1}) = 6/7\)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-99" style="background:;">
+  
+  <hgroup>
+    <h2>Chaine de Markov : exemple</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Probabilité de l&#39;oubli au jour 2 :</strong></p>
+
+<ul class = "build incremental">
+<li><p>\(P(A\_2) = P(A\_2 | A\_1) * P(A\_1) + P(A\_2 | B\_1) * P(B\_1)\)
+\(P(A\_2) = 1/7 * 1/2 + 2/7 * 1/2 \simeq 0.21\)</p></li>
+<li><p>\(P(B\_2) = P(B\_2 | A\_1) * P(A\_1) + P(B\_2 | B\_1) * P(B\_1)\)
+\(P(B\_2) = 6/7 * 1/2 + 5/7 * 1/2 \simeq 0.79\)</p></li>
+<li><p>Le vecteur de probabilité \(P_2 = (P(A\_2), P(B\_2))\) s&#39;obtient par produit matriciel :
+\[ P_2 = P_1 * M = (\frac{1}{2}~\frac{1}{2}) * \begin{pmatrix}
+1/7 & 6/7 \\\
+2/7 & 5/7 \\\
+\end{pmatrix}
+\]</p></li>
+<li><p>De même \(P_3 = P_2*M\)</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-100" style="background:;">
+  
+  <hgroup>
+    <h2>Simulation avec R</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li><strong>1ere étape</strong> : simuler la prise de médicaments pour un patient pendant un an.
+
+<ul>
+<li>Générer un vecteur de taille 365 contenant 1 ou 0 s&#39;il y a eu un oubli ou pas.
+Pour chaque jour, on regarde s&#39;il y a eu un oubli ou pas au jour précédent, et on réalise un tirage en fonction.</li>
+</ul></li>
+<li><strong>2e étape</strong> : simuler 1000 patients, et stocker les résultats dans une matrice de taille 365*1000</li>
+<li><strong>3e étape</strong> : Représentation graphique. Calculer la proportion d&#39;oubli par jour, et l&#39;afficher sur un graphique en ligne (<code>plot</code>)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-101" style="background:;">
+  
+  <article data-timings="">
+    <pre><code class="r">un.patient &lt;- function(){
+  oublis &lt;- rep(NA,365)
+
+  for (i in 1:365){
+    alea &lt;- runif(1)
+    if (i==1){ # premier jour
+      oublis[1] &lt;- ifelse(alea&gt;0.5,1,0)
+      # oublis[1] &lt;- 0
+    } else if (oublis[i-1]==0) { # Pas d&#39;oubli le jour précédent
+      oublis[i] &lt;- ifelse(alea&gt;2/7,0,1)
+    } else {
+      oublis[i] &lt;- ifelse(alea&gt;1/7,0,1)
+    }
+  }
+  return(oublis)
+}
+
+mille.patients &lt;- c()
+for (i in 1:1000){
+  mille.patients &lt;- rbind(mille.patients,un.patient())
+}
+plot(x=1:365,y=colMeans(mille.patients),type=&quot;l&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-66-1.png" alt="plot of chunk unnamed-chunk-66"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-102" style="background:;">
+  
+  <hgroup>
+    <h2>Chaine de Markov : exemple</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Pour calculer les probabilités au temps \(n\), on peut utiliser le résultat :
+ \[P\_{n+m} = P\_n*M\^{m}\]</p>
+
+<ul class = "build incremental">
+<li>En particulier, \(P\_n = P\_0 * M\^n\)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="eighty" id="slide-103" style="background:;">
+  
+  <hgroup>
+    <h2>Chaine de Markov : exemple</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Pour calculer les probabilités au temps \(n\), on peut utiliser le résultat :
+ \[P\_{n+m} = P\_n*M\^{m}\]</p>
+
+<ul>
+<li>En particulier, \(P\_n = P\_0 * M\^n\)</li>
+</ul>
+
+<pre><code class="r"># Exemple des médicaments
+p &lt;- c(0.5,0.5)
+M &lt;- matrix(c(1/7,2/7,6/7,5/7),ncol=2)
+for (i in 1:365){
+  p &lt;- p %*% M
+}
+p
+</code></pre>
+
+<pre><code>##      [,1] [,2]
+## [1,] 0.25 0.75
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="seventy" id="slide-104" style="background:;">
+  
+  <hgroup>
+    <h2>Classification des états</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul class = "build incremental">
+<li>État \(j\) <strong>accessible</strong> à partir de \(i\) <em>ssi</em> $ \exists~n~tq~p_{ij}^{n}&gt;0$</li>
+<li>\(i\) et \(j\) <strong>communiquent</strong> si \(i\) est accessible à partir de \(j\) et \(j\) est accessible à partir de \(i\)</li>
+<li><p>Des états qui communiquent forment une <strong>classe</strong>. Si tous les états de la chaine communiquent entre eux, on parle de <strong>chaine irréductible</strong></p></li>
+<li><p>Un état est <strong>transitoire</strong> si la chaine ne revient jamais à cet état.
+\(i\) est transitoire s&#39;il existe \(j\) tel que \(j\) est accessible de \(i\) mais \(i\) n&#39;est pas accessible à partir de \(j\) </p></li>
+<li><p>Un état est <strong>récurrent</strong> si la chaine revient à cet état à coup sur. La chaine est <strong>périodique</strong> si toute trajectoire revient à son état initial après \(k\) étapes </p></li>
+<li><p>Un état est <strong>absorbant</strong> si le processus ne peut pas sortir de cet état. \(p_{ii}=1\)</p></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="markov_exemple.png" alt="Drawing" style="width: 400px;" align="center"/></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-105" style="background:;">
+  
+  <hgroup>
+    <h2>Modèles à compartiments</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Objectif : Modéliser le comportement d&#39;un système biologique : épidémie au sein d&#39;une population</strong></p>
+
+<ul>
+<li>Combien d&#39;états ?</li>
+<li>Quels transferts entre ces états?</li>
+<li>Comment sont régis ces transferts</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-106" style="background:;">
+  
+  <hgroup>
+    <h2>Application : modèle SIR</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Objectif : Modéliser le comportement d&#39;un système biologique : épidémie au sein d&#39;une population</strong></p>
+
+<ul>
+<li><strong>Combien d&#39;états ?</strong>
+
+<ul>
+<li>S : Susceptible</li>
+<li>I : Infecté</li>
+<li>R : Retiré</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-107" style="background:;">
+  
+  <hgroup>
+    <h2>Application : modèle SIR</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Objectif : Modéliser le comportement d&#39;un système biologique : épidémie au sein d&#39;une population</strong></p>
+
+<ul>
+<li><strong>Quels transferts entre ces états?</strong>
+
+<ul>
+<li>Les S peuvent devenir I (contamination)</li>
+<li>Les I peuvent devenir R (mort/immunisation)</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="seventy" id="slide-108" style="background:;">
+  
+  <hgroup>
+    <h2>Comment sont régis ces transferts ?</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p>La probabilité de passage de S à I dépend :</p>
+
+<ul>
+<li>de la population d&#39;individus infectés et de celle d&#39;individus sains</li>
+<li>d&#39;un paramètre de contagion : le taux de contact efficace \(\beta\)</li>
+<li>\(P(S \rightarrow I) = \beta I(t) S(t)\)</li>
+</ul></li>
+<li><p>La probabilité de passage de I à R dépend : </p>
+
+<ul>
+<li>Du nombre d&#39;individus infectés</li>
+<li>D&#39;une durée moyenne de contagion \alpha</li>
+<li>\(P(I \rightarrow R) = \alpha*I(t)\) </li>
+</ul></li>
+<li><p>Écriture d&#39;équations différentielles
+\[
+\frac{dS}{dt} = - \beta S I \] \[
+\frac{dI}{dt} = \beta S I - \alpha I \] \[
+\frac{dR}{dt} = \alpha I \] \[
+\]</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-109" style="background:;">
+  
+  <hgroup>
+    <h2>Modélisation</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Comment simuler une épidémie à partir des lois de changement de compartiment?</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li><p>Première solution : <strong>Méthode d&#39;Euler</strong></p>
+
+<p>À partir de l&#39;équation différentielle, on estime les effectifs de chaque compartiment à chaque pas de temps.
+Voir ex sur la gravure du tabac</p></li>
+</ul>
+
+<p>Pour \(h\) suffisamment petit :
+\[
+f(x+h)=f(x)+h*f'(x)
+\]</p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="euler.png" alt="Drawing" style="width: 500px;" align="center"/></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-110" style="background:;">
+  
+  <hgroup>
+    <h2>Modélisation</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Comment simuler une épidémie à partir des lois de changement de compartiment?</p>
+
+<ul>
+<li>Deuxième solution : simuler le temps entre chaque changement d&#39;effectif</li>
+</ul>
+
+<ul class = "build incremental">
+<li>La <strong>propriété de Markov forte</strong> dit que les temps de saut de processus suivent une <strong>loi exponentielle</strong></li>
+<li>Il y a deux types de changements : S -&gt; I et I -&gt; R, ayant pour probabilité  $\frac{dS}{dt} = \beta S(T) I(T) $ et  $\frac{dS}{dt} =  \alpha I(T) $</li>
+<li><p>Le <strong>taux de changement</strong> est \(\beta S(T) I(T) +  \alpha I(T)\)</p></li>
+<li><p>Le temps entre chaque changement d&#39;état du système suit une loi exponentielle de paramètre \(\beta S(T) I(T) +  \alpha I(T)\) </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-111" style="background:;">
+  
+  <hgroup>
+    <h2>Écriture de l&#39;algorithme</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><strong>Principe</strong> :</p>
+
+<ul class = "build incremental">
+<li>4 vecteurs :  time,suscept,infect,remov correspondant au temps et aux effectifs des 3 compartiments. On les remplit élément par élément à chaque pas de temps.</li>
+<li>le temps commence à t=0. Pour déterminer le temps suivant, on tire le pas de temps dans une loi exponentielle de paramètre \(\beta S(t) I(t) +  \alpha I(t)\)<br></li>
+<li><p>Pour choisir le type de changement qui se produit, on tire une loi de Bernoulli de paramètre \(\frac{\beta*S*I}{\beta*S*I+\alpha*I}\). On applique les changements correspondants dans les vecteurs S I et R.</p></li>
+<li><p><strong>Simuler une épidémie avec S0=20000, I0=5, R0=80000, beta=0.000023 et alpha=0.337 (soit durée de contagiosité 1/alpha d&#39;environ 3 jours)</strong></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Introduction au langage R'>
+         2
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='R'>
+         3
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Apprentissage de R'>
+         4
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Première session R'>
+         5
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Environnement de travail'>
+         6
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='L&#39;éditeur de code'>
+         7
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Quelques bonnes pratiques'>
+         8
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Les scalaires'>
+         9
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Exercices sur les scalaires'>
+         10
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Conversion de variables'>
+         11
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Conversion de variables'>
+         12
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Les vecteurs'>
+         13
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Fonctions utiles pour les vecteurs'>
+         14
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Exercice sur les vecteurs'>
+         15
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Exercice 2 sur les vecteurs'>
+         16
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Les facteurs'>
+         17
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Les matrices'>
+         18
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Fonctions utiles pour les matrices'>
+         19
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='NA'>
+         20
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Exercice sur les matrices'>
+         21
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Exercice 2 sur les matrices'>
+         22
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Les listes'>
+         23
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Les listes'>
+         24
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Fonctions apply sur des listes'>
+         25
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Les data.frame'>
+         26
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Fonctions utiles pour les data.frame'>
+         27
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Exercices sur les data.frame'>
+         28
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Exercices sur les data.frame'>
+         29
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Exercice sur les data.frame'>
+         30
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Algorithmique'>
+         31
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Les fonctions'>
+         32
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Créer ses fonctions'>
+         33
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Exercices sur les fonctions'>
+         34
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Des structures conditionelles'>
+         35
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Des structures conditionelles'>
+         36
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Opérateurs logiques'>
+         37
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='Exercice'>
+         38
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='Exercice'>
+         39
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='Les boucles'>
+         40
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='Exercices sur les boucles'>
+         41
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='Exercice sur les boucles'>
+         42
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Fonction <code>plot</code>'>
+         43
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Principaux paramètres'>
+         44
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Plusieurs lignes sur un même graphe'>
+         45
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Simulation de variables aléatoires'>
+         46
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Générateurs de nombre aléatoires'>
+         47
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Exemple de générateur pseudo aléatoire'>
+         48
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='Autre exemple : générateurs congruentiels linéaires'>
+         49
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='Générateurs pseudo aléatoires'>
+         50
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='Exercice sur des données épidémiologiques'>
+         51
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='Rappel sur les variables aléatoires'>
+         52
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=53 title='Exemples de lois discrètes'>
+         53
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=54 title='Exemples de lois discrètes'>
+         54
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=55 title='Distribution de probabilité'>
+         55
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=56 title='Fonction de répartition'>
+         56
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='Exemples de lois discrètes'>
+         57
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='Lois continues'>
+         58
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=59 title='Densité de la loi normale'>
+         59
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title='Fonction de répartition de la loi normale'>
+         60
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=61 title='Théorème Central Limite (TCL)'>
+         61
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=62 title='Théorème Central Limite (TCL)'>
+         62
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=63 title='Théorème Central Limite (TCL)'>
+         63
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=64 title='Théorème Central Limite (TCL)'>
+         64
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=65 title='Théorème Central Limite (TCL)'>
+         65
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=66 title='Inversion de la fonction de répartition'>
+         66
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=67 title='Inversion de la fonction de répartition'>
+         67
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=68 title='Inversion de la fonction de répartition'>
+         68
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=69 title='Inversion de la fonction de répartition'>
+         69
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=70 title='Inversion de la fonction de répartition'>
+         70
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=71 title='Inversion de la fonction de répartition'>
+         71
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=72 title='Solution'>
+         72
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=73 title='Verification dans R'>
+         73
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=74 title='Inversion de la fonction de répartition'>
+         74
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=75 title='Inversion de la fonction de répartition'>
+         75
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=76 title='Inversion de la fonction de répartition'>
+         76
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=77 title='Méthode de Box-Muller'>
+         77
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=78 title='Méthode de Box-Muller'>
+         78
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=79 title='Rappel de mathématiques'>
+         79
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=80 title='Intuition - Suite'>
+         80
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=81 title='Méthode de Box Muller.'>
+         81
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=82 title='Simulation avec la méthode de B-M :'>
+         82
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=83 title='Implémentation'>
+         83
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=84 title='Méthode de rejet'>
+         84
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=85 title='Méthode de rejet'>
+         85
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=86 title='Méthode de rejet - intuition'>
+         86
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=87 title='Méthode de rejet - intuition'>
+         87
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=88 title='Méthode de rejet - intuition'>
+         88
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=89 title='Méthode de rejet - intuition'>
+         89
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=90 title='Méthode de rejet - intuition'>
+         90
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=91 title='Méthode de rejet'>
+         91
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=92 title='Choix de la valeur de c'>
+         92
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=93 title='Implémentation dans R de la méthode de rejet'>
+         93
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=94 title='Chaines de Markov'>
+         94
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=95 title='Introduction'>
+         95
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=96 title='Chaine de Markov : exemple'>
+         96
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=97 title='Chaine de Markov : exemple'>
+         97
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=98 title='Chaine de Markov : exemple'>
+         98
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=99 title='Chaine de Markov : exemple'>
+         99
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=100 title='Simulation avec R'>
+         100
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=101 title='NA'>
+         101
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=102 title='Chaine de Markov : exemple'>
+         102
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=103 title='Chaine de Markov : exemple'>
+         103
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=104 title='Classification des états'>
+         104
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=105 title='Modèles à compartiments'>
+         105
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=106 title='Application : modèle SIR'>
+         106
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=107 title='Application : modèle SIR'>
+         107
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=108 title='Comment sont régis ces transferts ?'>
+         108
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=109 title='Modélisation'>
+         109
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=110 title='Modélisation'>
+         110
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=111 title='Écriture de l&#39;algorithme'>
+         111
+      </a>
+    </li>
+    
+    </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

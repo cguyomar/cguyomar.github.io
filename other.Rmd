@@ -13,7 +13,8 @@ output: html_document
 
 * ##### Simulation for biostatistics
   2016 - Master 1 Santé publique <br>
-  Initiation to R programming, random variable simulations, stochastic simulation
+  Initiation to R programming, random variable simulations, stochastic simulation  <br>
+  [Slides (in french)](documents/slides_SB/index.html)
 
 ### Supervising 
 
