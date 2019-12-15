@@ -46,7 +46,7 @@ article p, article li, article li.build, section p, section li{
   font-family: 'Open Sans','Helvetica', 'Crimson Text', 'Garamond',  'Palatino', sans-serif;
   text-align: justify;
   font-size:22px;
-  line-height: 1.5em;
+  line-height: 1/2em;
   color: #444;
 }
 
@@ -352,7 +352,7 @@ pre code {
 }
 
 .title-slide {
-  background-color: #CBE7A5; /* #EDE0CF; ; #CA9F9D*/
+  background-color: #FFFFFF; /* #EDE0CF; ; #CA9F9D*/
   /* background-image:url(http://goo.gl/EpXln); */
 }
 

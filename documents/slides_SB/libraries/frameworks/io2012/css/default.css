@@ -363,7 +363,7 @@ slides > slide > hgroup + article.flexbox.vcenter, slides > slide > hgroup + art
 }
 /* line 225, ../scss/default.scss */
 slides > slide > hgroup + article p {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 /* line 230, ../scss/default.scss */
 slides > slide > article:only-child {
@@ -534,9 +534,9 @@ ul ul {
 /* line 373, ../scss/default.scss */
 pre {
   font-family: 'Inconsolata', 'Courier New', monospace;
-  font-size: 20px;
-  line-height: 28px;
-  padding: 10px 0 10px 60px;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 5px 0 5px 60px;
   letter-spacing: -1px;
   margin-bottom: 0px;
   width: 106%;
