@@ -22,8 +22,8 @@ I am currently a post-doctoral researcher in the bioinformatics unit of [iDiv](h
 
 I was a PhD student in [GenScale team](https://team.inria.fr/genscale/) (INRIA/IRISA) and [EGI team](https://www6.rennes.inra.fr/igepp/Equipes-de-recherche/Ecologie-et-Genetique-des-Insectes) (INRA Igepp) in Rennes, France.
 
-Two projects of my PhD :
+Two contributions of my PhD :
 
 * Strain level characterization of the pea aphid symbionts by analysis of SNP profiles ([paper in Microbiome](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0562-9s))
-* Developpment of a method for reference guided assembly in metagenomic context ([in development](https://github.com/GATB/MindTheGap))
+* Developpment of **MinYS**, a new method for reference guided assembly in metagenomic context ([available on github](https://github.com/cguyomar/MinYS) and [bioRxiv](https://www.biorxiv.org/content/10.1101/2019.12.13.875021v1)) 
 
