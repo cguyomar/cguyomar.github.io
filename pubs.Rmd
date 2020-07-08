@@ -7,6 +7,9 @@ output: html_document
 
 ### Peer reviewed publications
 
+* **[MinYS: Mine Your Symbiont by targeted genome assembly in symbiotic communities](https://academic.oup.com/nargab/article/2/3/lqaa047/5867120) <br>**
+   **C. Guyomar**, W. Delage, F. Legeai, C. Mougel, JC. Simon and C. Lemaitre <br>
+   NAR Genomics and Bioinformatics, 2020
 
 * **[Multi-scale characterization of symbiont diversity in the pea aphid complex through metagenomic approaches.](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0562-9) <br>**
   **C. Guyomar**, F. Legeai, E. Jousselin, C. Mougel, C. Lemaitre and JC. Simon  <br>

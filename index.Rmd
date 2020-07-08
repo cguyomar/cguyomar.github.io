@@ -18,12 +18,17 @@ knitr::opts_chunk$set(eval=F)
 <br>
 I am a bioinformatician, with a background in statistics and agronomy.
 
-I am currently a post-doctoral researcher in the bioinformatics unit of [iDiv](https://www.idiv.de/) in Leipzig, Germany.
+I am currently a research engineer in INRAE, Rennes.
+
+My current research interests include : 
+
+  - The chraracterization of the rainbow trout microtranscriptome in order to characterize miRna biomarkers
+  - The exploration of the genomic diversity of the downy mildiou (in collaboration with INRAE UMR SAVE, Bordeaux)
 
 I was a PhD student in [GenScale team](https://team.inria.fr/genscale/) (INRIA/IRISA) and [EGI team](https://www6.rennes.inra.fr/igepp/Equipes-de-recherche/Ecologie-et-Genetique-des-Insectes) (INRA Igepp) in Rennes, France.
 
 Two contributions of my PhD :
 
 * Strain level characterization of the pea aphid symbionts by analysis of SNP profiles ([paper in Microbiome](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0562-9s))
-* Developpment of **MinYS**, a new method for reference guided assembly in metagenomic context ([available on github](https://github.com/cguyomar/MinYS) and [bioRxiv](https://www.biorxiv.org/content/10.1101/2019.12.13.875021v1)) 
+* Developpment of **MinYS**, a new method for reference guided assembly in metagenomic context ([available on github](https://github.com/cguyomar/MinYS) and [NAR-gab](https://academic.oup.com/nargab/article/2/3/lqaa047/5867120)) 
 
