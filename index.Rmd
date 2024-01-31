@@ -16,19 +16,30 @@ knitr::opts_chunk$set(eval=F)
 ## About me
 
 <br>
-I am a bioinformatician, with a background in statistics and agronomy.
+I am a bioinformatician and have a reasearch engineer position in INRAE [GenPhySE](https://genphyse.toulouse.inra.fr/) in Toulouse, France. I'm a member of the [DynaGen group](https://genphyse.toulouse.inra.fr/groups/dynagen) and the [Sigenae platform](https://www.sigenae.org/).
 
-I am currently a research engineer in INRAE, Rennes.
+## Research
 
-My current research interests include : 
+Here is a summary of my past and current projects : 
 
-  - The chraracterization of the rainbow trout microtranscriptome in order to characterize miRna biomarkers
-  - The exploration of the genomic diversity of the downy mildiou (in collaboration with INRAE UMR SAVE, Bordeaux)
+### Functional annotation of animal genomes
 
-I was a PhD student in [GenScale team](https://team.inria.fr/genscale/) (INRIA/IRISA) and [EGI team](https://www6.rennes.inra.fr/igepp/Equipes-de-recherche/Ecologie-et-Genetique-des-Insectes) (INRA Igepp) in Rennes, France.
+I'm invovled in two europeans projects aiming at improving genomic annotations of farmed species.
+I am a contributor of the WP2 of  GENE-SWitCH, where we analyze multi-omics (RNA-seq, smRNA-seq, ChIP-seq, ATAC-seq, Hi-C) data of two monogastric species during development to improve functional annotations of their genomes and characterize the regulation landscape during development.
 
-Two contributions of my PhD :
+I am also more lightly involved in AQUA-FAANG, for the annotation of miRNAs in 6 fish species.
 
-* Strain level characterization of the pea aphid symbionts by analysis of SNP profiles ([paper in Microbiome](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0562-9s))
-* Developpment of **MinYS**, a new method for reference guided assembly in metagenomic context ([available on github](https://github.com/cguyomar/MinYS) and [NAR-gab](https://academic.oup.com/nargab/article/2/3/lqaa047/5867120)) 
+### Genotyping using low coverage sequencing data
 
+I'm exploring the capacities of sparse or low coverage sequencing for cost efficient genome-wide genotyping.
+I have started to developp [PARSEC](https://github.com/cguyomar/PARSEC/) a Nextflow pipeline for variant calling and imputation using such data
+
+### Bioinformatics analyses
+
+As a  [Sigenae](https://www.sigenae.org/) engineer, I bring support to biologists to process genomic data, in particular RNA-seq and smRNA-seq data.
+
+### Past projects : 
+  - Annotation and analysis of circulating miRNAs of the rainbow trout for biomarker selection
+  - PhD project :
+    - Targetted genome assembly in metagenomic data ([MinYS](https://github.com/cguyomar/minys)) 
+    - Strain level characterization of microbial species in the pea aphid holobiont 
