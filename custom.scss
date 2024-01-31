@@ -1,0 +1,22 @@
+/*-- scss:defaults --*/
+$h2-font-size:          2.6rem !default;
+$headings-font-weight:  500 !default;
+
+/*-- scss:rules --*/
+
+div.listing-date {
+  font-size: 1.5rem;
+}
+div.quarto-post .metadata {
+  flex-basis: 20% !important;
+}
+
+div.quarto-post .body .listing-subtitle {
+  font-size: 1.1rem;
+}
+
+div.quarto-post .body .listing-description {
+  font-size: 1.1rem;
+}
+
+

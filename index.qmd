@@ -1,10 +1,5 @@
 ---
-pagetitle: "Cervin Guyomar Homepage"
-output: 
-  html_document:
-    toc: no
-output_dir: "."
-
+title: "Cervin Guyomar Homepage"
 ---
 
 ```{r,echo=F,eval=T}
@@ -15,10 +10,24 @@ knitr::opts_chunk$set(eval=F)
 
 ## About me
 
-<br>
-I am a bioinformatician and have a reasearch engineer position in INRAE [GenPhySE](https://genphyse.toulouse.inra.fr/) in Toulouse, France. I'm a member of the [DynaGen group](https://genphyse.toulouse.inra.fr/groups/dynagen) and the [Sigenae platform](https://www.sigenae.org/).
+::: columns
+::: {.column width="40%"}
 
-## Research
+![](documents/cervin_guyomar.jpg ){width=70%}
+
+
+:::
+::: {.column width="60%"}
+
+<br>
+I am a reasearch engineer in INRAE [GenPhySE](https://genphyse.toulouse.inra.fr/) in Toulouse, France. I'm a member of the [DynaGen group](https://genphyse.toulouse.inra.fr/groups/dynagen) and the [Sigenae platform](https://www.sigenae.org/).
+
+I am a bioinformatician, with a focus on sequencing data analysis for functional genomics
+:::
+
+:::
+
+## Topics
 
 Here is a summary of my past and current projects : 
 

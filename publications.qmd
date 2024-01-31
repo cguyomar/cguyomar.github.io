@@ -1,0 +1,23 @@
+---
+title: 'Publications'
+page-layout: full
+title-block-banner: true
+image: /assets/images/social-profile.png
+date-format: 'YYYY'
+listing:
+  contents:
+    - publications.yml
+  page-size: 20
+  sort: 'date desc'
+  type: default
+  categories: false
+  sort-ui: [date, title, subtitle, first]
+  filter-ui: [date, title, subtitle]
+  fields: [date, title, subtitle, description, first]
+  field-display-names:
+    date: Issued
+    subtitle: Journal
+    description: Authors
+    position: Rank
+    first: 'First'
+---

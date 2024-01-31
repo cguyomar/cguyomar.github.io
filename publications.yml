@@ -1,0 +1,562 @@
+- accessed: 2024-01-31
+  author:
+  - family: Guyomar
+    given: Cervin
+  - family: Legeai
+    given: Fabrice
+  - family: Jousselin
+    given: Emmanuelle
+  - family: Mougel
+    given: Christophe
+  - family: Lemaitre
+    given: Claire
+  - family: Simon
+    given: Jean-Christophe
+  container-title: Microbiome
+  doi: 10.1186/s40168-018-0562-9
+  id: guyomar_multi-scale_2018
+  issn: 2049-2618
+  issue: 1
+  issued: 2018-12
+  note: first
+  page: 181
+  title: Multi-scale characterization of symbiont diversity in the pea
+    aphid complex through metagenomic approaches
+  type: article-journal
+  url: "https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0562-9"
+  volume: 6
+  subtitle: '*Microbiome*'
+  date: "2018-12"
+  path: https://doi.org/10.1186/s40168-018-0562-9
+  position: '1/6'
+  first: '*As first or co-first*'
+  description: C. Guyomar, F. Legeai, E. Jousselin, C. Mougel, C. Lemaitre, J. Simon
+- author:
+  - family: Frohn
+    given: Laura
+  - family: Peixoto
+    given: Diogo
+  - family: Guyomar
+    given: Cervin
+  - family: Teixeira
+    given: Carla
+  - family: Terrier
+    given: Frédéric
+  - family: Aguirre
+    given: Pierre
+  - family: Maman Haddad
+    given: Sarah
+  - family: Bobe
+    given: Julien
+  - family: Costas
+    given: Benjamin
+  - family: Richard
+    given: Nadège
+  - family: Pinel
+    given: Karine
+  - family: Skiba-Cassy
+    given: Sandrine
+  container-title: Aquaculture
+  doi: 10.1016/j.aquaculture.2023.740226
+  id: frohn_yeast_2024
+  issued: 2024-01
+  keyword: High throughput sequencing, Nutrition, Processed animal
+    protein, Rainbow trout, Yeast extract
+  note: "Publisher: Elsevier"
+  title: Yeast extract improves growth in rainbow trout (Oncorhynchus
+    mykiss) fed a fishmeal-free diet and modulates the hepatic and
+    distal intestine transcriptomic profile
+  type: article-journal
+  url: "https://hal.inrae.fr/hal-04259805"
+  volume: 579
+  subtitle: '*Aquaculture*'
+  date: "2024-01"
+  path: https://doi.org/10.1016/j.aquaculture.2023.740226
+  position: '3/12'
+  first: '&emsp;&emsp;&emsp;'
+  description: L. Frohn, D. Peixoto, C. Guyomar, C. Teixeira, F. Terrier, P. Aguirre, S. Maman Haddad, J. Bobe, B. Costas, N. Richard, K. Pinel, S. Skiba-Cassy
+- author:
+  - family: Baiakhmetov
+    given: Evgenii
+  - family: Guyomar
+    given: Cervin
+  - family: Shelest
+    given: Ekaterina
+  - family: Nobis
+    given: Marcin
+  - family: Gudkova
+    given: Polina D
+  container-title: Scientific Reports
+  doi: 10.1038/s41598-021-94068-w
+  id: baiakhmetov_first_2021
+  issue: 1
+  issued: 2021-07
+  note: "Publisher: Nature Publishing Group"
+  page: 15345
+  title: The first draft genome of feather grasses using SMRT sequencing
+    and its implications in molecular studies of Stipa
+  type: article-journal
+  url: "https://hal.science/hal-03336697"
+  volume: 11
+  subtitle: '*Scientific Reports*'
+  date: "2021-07"
+  path: https://doi.org/10.1038/s41598-021-94068-w
+  position: '2/5'
+  first: '&emsp;&emsp;&emsp;'
+  description: E. Baiakhmetov, C. Guyomar, E. Shelest, M. Nobis, P. Gudkova
+- author:
+  - family: Cardona
+    given: Emilie
+  - family: Guyomar
+    given: Cervin
+  - family: Desvignes
+    given: Thomas
+  - family: Montfort
+    given: Jérôme
+  - family: Guendouz
+    given: Samia
+  - family: Postlethwait
+    given: John H
+  - family: Skiba-Cassy
+    given: Sandrine
+  - family: Bobe
+    given: Julien
+  container-title: BMC Biology
+  doi: 10.1186/s12915-021-01163-5
+  id: cardona_circulating_2021
+  issue: 1
+  issued: 2021-12
+  keyword: Biological fluid, Biomarker, Fish, mir202, mir375, myomiR,
+    Non-invasive phenotyping
+  note: "Publisher: BioMed Central first"
+  title: Circulating miRNA repertoire as a biomarker of metabolic and
+    reproductive states in rainbow trout
+  type: article-journal
+  url: "https://hal.inrae.fr/hal-03436712"
+  volume: 19
+  subtitle: '*BMC Biology*'
+  date: "2021-12"
+  path: https://doi.org/10.1186/s12915-021-01163-5
+  position: '2/8'
+  first: '*As first or co-first*'
+  description: E. Cardona, C. Guyomar, T. Desvignes, J. Montfort, S. Guendouz, J. Postlethwait, S. Skiba-Cassy, J. Bobe
+- author:
+  - family: Desvignes
+    given: Thomas
+  - family: Bardou
+    given: Philippe
+  - family: Montfort
+    given: Jérôme
+  - family: Sydes
+    given: Jason
+  - family: Guyomar
+    given: Cervin
+  - family: George
+    given: Simon
+  - family: Postlethwait
+    given: John H
+  - family: Bobe
+    given: Julien
+  container-title: Molecular Biology and Evolution
+  doi: 10.1093/molbev/msac004
+  id: desvignes_fishmirna_2022
+  issue: 2
+  issued: 2022-01
+  keyword: actinopterygian, bowfin Amia calva, Holostei, non-coding RNA,
+    Teleost, Whole Genome Duplication
+  note: "Publisher: Oxford University Press (OUP)"
+  page: msac004
+  title: "FishmiRNA: An evolutionarily supported microRNA annotation and
+    expression database for ray-finned fishes"
+  title-short: FishmiRNA
+  type: article-journal
+  url: "https://hal.inrae.fr/hal-03528022"
+  volume: 39
+  subtitle: '*Molecular Biology and Evolution*'
+  date: "2022-01"
+  path: https://doi.org/10.1093/molbev/msac004
+  position: '5/8'
+  first: '&emsp;&emsp;&emsp;'
+  description: T. Desvignes, P. Bardou, J. Montfort, J. Sydes, C. Guyomar, S. George, J. Postlethwait, J. Bobe
+- author:
+  - family: Sontowski
+    given: Rebekka
+  - family: Guyomar
+    given: Cervin
+  - family: Poeschl
+    given: Yvonne
+  - family: Weinhold
+    given: Alexander
+  - dropping-particle: van
+    family: Dam
+    given: Nicole M
+  - family: Vassão
+    given: Daniel G
+  container-title: Frontiers in Physiology
+  doi: 10.3389/fphys.2022.874527
+  id: sontowski_mechanisms_2022
+  issued: 2022-04
+  keyword: allelochemicals, Brassicaceae, detoxification,
+    glucosinolates, herbivory, metabolism, pest, plant-insect
+    interaction
+  note: "Publisher: Frontiers"
+  page: 17 p.
+  title: "Mechanisms of Isothiocyanate Detoxification in Larvae of Two
+    Belowground Herbivores, Delia radicum and D. floralis (Diptera:
+    Anthomyiidae)"
+  title-short: Mechanisms of Isothiocyanate Detoxification in Larvae of
+    Two Belowground Herbivores, Delia radicum and D. floralis (Diptera
+  type: article-journal
+  url: "https://hal.inrae.fr/hal-03719433"
+  volume: 13
+  subtitle: '*Frontiers in Physiology*'
+  date: "2022-04"
+  path: https://doi.org/10.3389/fphys.2022.874527
+  position: '2/5'
+  first: '&emsp;&emsp;&emsp;'
+  description: R. Sontowski, C. Guyomar, Y. Poeschl, A. Weinhold, N. Vassão, D. Sontowski
+- author:
+  - family: Sontowski
+    given: Rebekka
+  - family: Poeschl
+    given: Yvonne
+  - family: Okamura
+    given: Yu
+  - family: Vogel
+    given: Heiko
+  - family: Guyomar
+    given: Cervin
+  - family: Cortesero
+    given: Anne-Marie
+  - dropping-particle: van
+    family: Dam
+    given: Nicole M.
+  container-title: Molecular Ecology Resources
+  doi: 10.1111/1755-0998.13594
+  id: sontowski_high-quality_2022
+  issue: 5
+  issued: 2022-07
+  keyword: herbivory, belowground pest, chromosome-scale genome, de novo
+    genome assembly, functional gene annotation, insects
+  note: "Publisher: Wiley/Blackwell"
+  page: 1954-1971
+  title: "A high-quality functional genome assembly of Delia radicum L.
+    (Diptera: Anthomyiidae) annotated from egg to adult"
+  title-short: A high-quality functional genome assembly of Delia
+    radicum L. (Diptera
+  type: article-journal
+  url: "https://hal.science/hal-03713223"
+  volume: 22
+  subtitle: '*Molecular Ecology Resources*'
+  date: "2022-07"
+  path: https://doi.org/10.1111/1755-0998.13594
+  position: '5/6'
+  first: '&emsp;&emsp;&emsp;'
+  description: R. Sontowski, Y. Poeschl, Y. Okamura, H. Vogel, C. Guyomar, A. Cortesero, N. Sontowski
+- author:
+  - family: Guyomar
+    given: Cervin
+  - family: Delage
+    given: Wesley
+  - family: Legeai
+    given: Fabrice
+  - family: Mougel
+    given: Christophe
+  - family: Simon
+    given: Jean-Christophe
+  - family: Lemaitre
+    given: Claire
+  container-title: NAR Genomics and Bioinformatics
+  doi: 10.1093/nargab/lqaa047
+  id: guyomar_minys_2020
+  issue: 3
+  issued: 2020-09
+  note: "Publisher: Oxford University Press first"
+  page: 1-11
+  title: "MinYS: mine your symbiont by targeted genome assembly in
+    symbiotic communities"
+  title-short: MinYS
+  type: article-journal
+  url: "https://inria.hal.science/hal-02891885"
+  volume: 2
+  subtitle: '*NAR Genomics and Bioinformatics*'
+  date: "2020-09"
+  path: https://doi.org/10.1093/nargab/lqaa047
+  position: '1/6'
+  first: '*As first or co-first*'
+  description: C. Guyomar, W. Delage, F. Legeai, C. Mougel, J. Simon, C. Lemaitre
+- abstract: Abstract Understanding microRNA (miRNA) functions has been
+    hampered by major difficulties in identifying their biological
+    target(s). Currently, the main limitation is the lack of a suitable
+    strategy to identify biologically relevant targets among a high
+    number of putative targets. Here we provide a proof of concept of
+    successful de novo (i.e. without prior knowledge of its identity)
+    miRNA phenotypic target (i.e. target whose de-repression contributes
+    to the phenotypic outcomes) identification from RNA-seq data. Using
+    the medaka mir-202 knock-out (KO) model in which inactivation leads
+    to a major organism-level reproductive phenotype, including reduced
+    egg production, we introduced novel criteria including limited
+    fold-change in KO and low interindividual variability in gene
+    expression to reduce the list of 2853 putative targets to a short
+    list of 5. We selected tead3b, a member of the
+    evolutionarily-conserved Hippo pathway, known to regulate ovarian
+    functions, due to its remarkably strong and evolutionarily conserved
+    binding affinity for miR-202-5p. Deleting the miR-202-5p binding
+    site in the 3′ UTR of tead3b, but not of other Hippo pathway members
+    sav1 and vgll4b, triggered a reduced egg production phenotype. This
+    is one of the few successful examples of de novo functional
+    assignment of a miRNA phenotypic target in vivo in vertebrates.
+  accessed: 2024-01-31
+  author:
+  - family: Janati-Idrissi
+    given: Sarah
+  - dropping-particle: de
+    family: Abreu
+    given: Mariana Roza
+  - family: Guyomar
+    given: Cervin
+  - dropping-particle: de
+    family: Mello
+    given: Fernanda
+  - family: Nguyen
+    given: Thaovi
+  - family: Mechkouri
+    given: Nazim
+  - family: Gay
+    given: Stéphanie
+  - family: Montfort
+    given: Jérôme
+  - family: Gonzalez
+    given: Anne Alicia
+  - family: Abbasi
+    given: Marzieh
+  - family: Bugeon
+    given: Jérôme
+  - family: Thermes
+    given: Violette
+  - family: Seitz
+    given: Hervé
+  - family: Bobe
+    given: Julien
+  container-title: Nucleic Acids Research
+  doi: 10.1093/nar/gkad1154
+  id: janati-idrissi_looking_2024
+  issn: 0305-1048, 1362-4962
+  issue: 2
+  issued: 2024-01
+  page: 738-754
+  title: "Looking for a needle in a haystack: de novo phenotypic target
+    identification reveals Hippo pathway-mediated miR-202 regulation of
+    egg production"
+  title-short: Looking for a needle in a haystack
+  type: article-journal
+  url: "https://academic.oup.com/nar/article/52/2/738/7460321"
+  volume: 52
+  subtitle: '*Nucleic Acids Research*'
+  date: "2024-01"
+  path: https://doi.org/10.1093/nar/gkad1154
+  position: '2/12'
+  first: '&emsp;&emsp;&emsp;'
+  description: S. Janati-Idrissi, M. Guyomar, C. Nguyen, F. Mechkouri, T. Gay, N. Montfort, S. Gonzalez, J. Abbasi, A. Bugeon, M. Thermes, J. Seitz, V. Bobe, H. Janati-Idrissi, J. Guyomar
+- abstract: Abstract Genome annotation plays a crucial role in providing
+    comprehensive catalog of genes and transcripts for a particular
+    species. As research projects generate new transcriptome data
+    worldwide, integrating this information into existing annotations
+    becomes essential. However, most bioinformatics pipelines are
+    limited in their ability to effectively and consistently update
+    annotations using new RNA-seq data. Here we introduce TAGADA, an
+    RNA-seq pipeline for Transcripts And Genes Assembly, Deconvolution,
+    and Analysis. Given a genomic sequence, a reference annotation and
+    RNA-seq reads, TAGADA enhances existing gene models by generating an
+    improved annotation. It also computes expression values for both the
+    reference and novel annotation, identifies long non-coding
+    transcripts (lncRNAs), and provides a comprehensive quality control
+    report. Developed using Nextflow DSL2, TAGADA offers user-friendly
+    functionalities and ensures reproducibility across different
+    computing platforms through its containerized environment. In this
+    study, we demonstrate the efficacy of TAGADA using RNA-seq data from
+    the GENE-SWiTCH project alongside chicken and pig genome annotations
+    as references. Results indicate that TAGADA can substantially
+    increase the number of annotated transcripts by approximately
+    \$300\\%\$ in these species. Furthermore, we illustrate how TAGADA
+    can integrate Illumina NovaSeq short reads with PacBio Iso-Seq long
+    reads, showcasing its versatility. TAGADA is available at
+    github.com/FAANG/analysis-TAGADA.
+  accessed: 2024-01-31
+  author:
+  - family: Kurylo
+    given: Cyril
+  - family: Guyomar
+    given: Cervin
+  - family: Foissac
+    given: Sylvain
+  - family: Djebali
+    given: Sarah
+  container-title: NAR Genomics and Bioinformatics
+  doi: 10.1093/nargab/lqad089
+  id: kurylo_tagada_2023
+  issn: 2631-9268
+  issue: 4
+  issued: 2023-10
+  note: first
+  page: lqad089
+  title: "TAGADA: a scalable pipeline to improve genome annotations with
+    RNA-seq data"
+  title-short: TAGADA
+  type: article-journal
+  url: "https://academic.oup.com/nargab/article/doi/10.1093/nargab/lqad089/7318076"
+  volume: 5
+  subtitle: '*NAR Genomics and Bioinformatics*'
+  date: "2023-10"
+  path: https://doi.org/10.1093/nargab/lqad089
+  position: '2/4'
+  first: '*As first or co-first*'
+  description: C. Kurylo, C. Guyomar, S. Foissac, S. Djebali
+- abstract: AbstractAUTS2 gene has been associated with numerous human
+    pathologies including autism. The respective importance of its
+    maternal and paternal contribution remains however unknown. Here we
+    show using a vertebrate model that the lack of maternal, but not
+    paternal, gene contribution triggers reduced embryonic survival and
+    long-term macroscopic and behavioral differences, including reduced
+    head size and reduced environment recognition abilities and anxiety.
+    Maternal auts2 modulates maternally-inherited factors that control,
+    in turn, early embryonic gene expression through transcriptional and
+    post-transcriptional regulations, and ultimately regulate numerous
+    transcription factors and evolutionarily conserved signaling
+    pathways during neurodevelopment. We observed a significant
+    enrichment in genes associated with human neuropathologies among
+    genes that are under maternal auts2 control. We report that AUTS2
+    belongs to a group of 45 evolutionarily-conserved
+    maternally-expressed genes associated with behavior and
+    neurodevelopment in vertebrates and linked to a diversity of human
+    diseases. These results shed new light on intergenerational
+    determinism of neurodevelopment and behavior in vertebrates,
+    including in the context of human pathologies associated with AUTS2.
+  accessed: 2024-01-31
+  author:
+  - family: Clément
+    given: Antoine
+  - family: Merdrignac
+    given: Constance
+  - family: Brionne
+    given: Aurélien
+  - family: Nguyen
+    given: Thaovi
+  - family: Montfort
+    given: Jerome
+  - family: Guyomar
+    given: Cervin
+  - family: Dauvé
+    given: Alexandra
+  - family: Herpin
+    given: Amaury
+  - family: Colson
+    given: Violaine
+  - family: Bobe
+    given: Julien
+  container-title: PREPRINT
+  doi: 10.21203/rs.3.rs-2617834/v1
+  genre: preprint
+  id: clement_maternal_2023
+  issued: 2023-03
+  publisher: In Review
+  title: Maternal auts2a contribution is a major intergenerational
+    driver of neurodevelopment and behavior
+  type: report
+  url: "https://www.researchsquare.com/article/rs-2617834/v1"
+  subtitle: '*PREPRINT*'
+  date: "2023-03"
+  path: https://doi.org/10.21203/rs.3.rs-2617834/v1
+  position: '6/10'
+  first: '&emsp;&emsp;&emsp;'
+  description: A. Clément, C. Merdrignac, A. Brionne, T. Nguyen, J. Montfort, C. Guyomar, A. Dauvé, A. Herpin, V. Colson, J. Bobe
+- accessed: 2024-01-31
+  author:
+  - family: Neal
+    given: Andrew L.
+  - family: Blackwell
+    given: Martin
+  - family: Akkari
+    given: Elsy
+  - family: Guyomar
+    given: Cervin
+  - family: Clark
+    given: Ian
+  - family: Hirsch
+    given: Penny R.
+  container-title: Plant and Soil
+  doi: 10.1007/s11104-017-3301-2
+  id: neal_phylogenetic_2018
+  issn: 0032-079X, 1573-5036
+  issue: 1-2
+  issued: 2018-06
+  page: 175-189
+  title: Phylogenetic distribution, biogeography and the effects of land
+    management upon bacterial non-specific Acid phosphatase Gene
+    diversity and abundance
+  type: article-journal
+  url: "http://link.springer.com/10.1007/s11104-017-3301-2"
+  volume: 427
+  subtitle: '*Plant and Soil*'
+  date: "2018-06"
+  path: https://doi.org/10.1007/s11104-017-3301-2
+  position: '4/6'
+  first: '&emsp;&emsp;&emsp;'
+  description: A. Neal, M. Blackwell, E. Akkari, C. Guyomar, I. Clark, P. Hirsch
+- abstract: SummaryPhosphorus cycling exerts significant influence upon
+    soil fertility and productivity -- processes largely controlled by
+    microbial activity. We adopted phenotypic and metagenomic approaches
+    to investigate phosphatase genes within soils. Microbial communities
+    in bare fallowed soil showed a marked capacity to utilise phytate
+    for growth compared with arable or grassland soil communities. Bare
+    fallowed soil contained lowest concentrations of orthophosphate.
+    Analysis of metagenomes indicated phoA , phoD and phoX , and
+    histidine acid and cysteine phytase genes were most abundant in
+    grassland soil which contained the greatest amount of NaOH‐EDTA
+    extractable orthophosphate. Beta‐propeller phytase genes were most
+    abundant in bare fallowed soil. Phylogenetic analysis of metagenome
+    sequences indicated the phenotypic shift observed in the capacity to
+    mineralise phytate in bare fallow soil was accompanied by an
+    increase in phoD , phoX and beta‐propeller phytase genes coding for
+    exoenzymes. However, there was a remarkable degree of genetic
+    similarity across the soils despite the differences in land‐use.
+    Predicted extracellular ecotypes were distributed across a greater
+    range of soil structure than predicted intracellular ecotypes,
+    suggesting that microbial communities subject to the dual stresses
+    of low nutrient availability and reduced access to organic material
+    in bare fallowed soils rely upon the action of exoenzymes.
+  accessed: 2024-01-31
+  author:
+  - family: Neal
+    given: Andrew L.
+  - family: Rossmann
+    given: Maike
+  - family: Brearley
+    given: Charles
+  - family: Akkari
+    given: Elsy
+  - family: Guyomar
+    given: Cervin
+  - family: Clark
+    given: Ian M.
+  - family: Allen
+    given: Elisa
+  - family: Hirsch
+    given: Penny R.
+  container-title: Environmental Microbiology
+  doi: 10.1111/1462-2920.13778
+  id: neal_landuse_2017
+  issn: 1462-2912, 1462-2920
+  issue: 7
+  issued: 2017-07
+  page: 2740-2753
+  title: Land‐use influences phosphatase gene microdiversity in soils
+  type: article-journal
+  url: "https://sfamjournals.onlinelibrary.wiley.com/doi/10.1111/1462-2920.13778"
+  volume: 19
+  subtitle: '*Environmental Microbiology*'
+  date: "2017-07"
+  path: https://doi.org/10.1111/1462-2920.13778
+  position: '5/8'
+  first: '&emsp;&emsp;&emsp;'
+  description: A. Neal, M. Rossmann, C. Brearley, E. Akkari, C. Guyomar, I. Clark, E. Allen, P. Hirsch

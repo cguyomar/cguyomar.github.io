@@ -1,0 +1,40 @@
+project:
+  type: website
+  
+website:  
+  title: Cervin Guyomar
+  navbar:
+    title: Cervin Guyomar
+    left:
+    - text: Home
+      href: index.html
+    - text: Publications
+      href: publications.html
+    - text: Teaching and others
+      href: other.html
+    - icon: fa-download
+      text: Curriculum
+      href: documents/Guyomar_Cervin.pdf
+    right:
+    - icon: fa-envelope-o
+      href: mailto:cervin.guyomar@gmail.com
+    - icon: fa-github
+      href: https://github.com/cguyomar
+      
+format:
+  html:
+    theme: 
+      - cyborg
+      - custom.scss
+    toc: true
+    
+output:
+  html_document:
+    theme: slate
+    highlight: pygments
+    toc: no
+    toc_float: no
+    lib_dir: site_libs
+    self_contained: no
+output_dir: '.'
+
