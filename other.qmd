@@ -5,6 +5,23 @@ output: html_document
 
 <br>
 
+
+### Supervising 
+
+* ##### Océane Carpentier (2024)
+  Master 2 BIG, Rennes<br>
+  Multi-omics integration for miRNA regulation analysis
+
+* ##### Martin Racoupeau (2022)
+  Master 2 Bioinformatique, Toulouse<br>
+  Comparing tools for miRNA annotation
+
+* ##### Wesley Delage (2017)
+  Master 2 Bioinformatique et génomique, Rennes<br>
+  Development of an innovative method based on a reference guided assembly for the genome reconstruction of a
+bacteriophage APSE
+
+
 ### Teaching
 
 * ##### Statistical learnings
@@ -15,13 +32,6 @@ output: html_document
   2016 - Master 1 Santé publique <br>
   Initiation to R programming, random variable simulations, stochastic simulation  <br>
   [Slides (in french)](documents/slides_SB/index.html)
-
-### Supervising 
-
-* ##### Wesley Delage (2017)
-  Master 2 Bioinformatique et génomique, Rennes<br>
-  Development of an innovative method based on a reference guided assembly for the genome reconstruction of a
-bacteriophage APSE
 
 ### Scientific dissemination
 
