@@ -1,0 +1,25 @@
+---
+pagetitle: "Software"
+output: html_document
+---
+
+<br>
+
+
+## Software : 
+
+### [TAGADA](https://github.com/FAANG/analysis-TAGADA) 
+
+TAGADA is a Nextflox pipeline that processes RNA-seq data to improve an existing genomics annotation
+
+### [PARSEC](https://github.com/cguyomar/PARSEC)
+
+PARSEC is a Nextflow pipeline for genoptyping using low coverage (sparse) sequencing. It uses variant calling and imputation tools to produce accurate genotypes from <3X data
+
+### [pegASE](https://github.com/cguyomar/nf-pegASE)
+
+pegASE is a Nexwtflow pipeline designed for analysis of Allele Specifi Expression (ASE) using RNAseq data
+
+### [MinYS](https://github.com/cguyomar/Minys)
+
+MinYS is a targetted assembler for metagenomic data. It uses a (potentially distant) reference genome as an assembly primer. The results is an assembly graph (GFA format) that can represent structural variations both compared to the reference and within the sequencing data

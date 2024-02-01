@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: ""
   
 website:  
   title: Cervin Guyomar
@@ -8,6 +9,8 @@ website:
     left:
     - text: Home
       href: index.html
+    - text: Software
+      href: software.html
     - text: Publications
       href: publications.html
     - text: Teaching and others
