@@ -17,11 +17,35 @@ create_pub_listing <- function(bib_file, author = "Guyomar") {
         ),
         -3
       )
-      authors <- sub(".*- family: ", "", grep("family:", article, value = TRUE))
-      given <- sub(".*given: ", "", grep("given", article, value = TRUE))
-      given.first <-paste( sapply(given,substring,1,1),".", sep="")
-      authors.string <- paste(given.first, authors, collapse = ", ")
+      authors.names <- article[grepl("family|given|dropping-particle", article)]
+      authors.names <- split(authors.names, cumsum(grepl(" - ", authors.names)))
+      authors.names <- lapply(authors.names, function(name){
+        name <- strsplit(name, ":")
+        sapply(name, function(x){ 
+          x[1] <- gsub(" | -","", x[1])
+          res = gsub("^ ","",x[2])
+          names(res) <- x[1]
+          return(res)})
+      })
+      
+      authors.string <- sapply(authors.names, function(name) { 
+        if ("dropping-particle" %in% names(name)){
+          name["family"] <- paste(name["dropping-particle"], name["family"], collapse = " ")
+        }
+        return(paste(
+          substring(name["given"], 1, 1),
+          name['family'],
+          sep = ". "
+        ))
+        })
+      
+      authors.string <- paste(authors.string, collapse = ", ")
       authors.string <- sprintf("  description: %s", authors.string)
+      # authors <- sub(".*family: ", "", grep("family:", article, value = TRUE))
+      # given <- sub(".*given: ", "", grep("given", article, value = TRUE))
+      # given.first <-paste( sapply(given,substring,1,1),".", sep="")
+      # authors.string <- paste(given.first, authors, collapse = ", ")
+      # authors.string <- sprintf("  description: %s", authors.string)
       
       
       if (isTRUE(grepl("first", grep("note:", article, value = TRUE)))) {

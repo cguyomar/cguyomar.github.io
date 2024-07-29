@@ -28,7 +28,7 @@
   subtitle: '*Microbiome*'
   date: "2018-12"
   path: https://doi.org/10.1186/s40168-018-0562-9
-  position: '1/6'
+  position: '2/6'
   first: '*As first or co-first*'
   description: C. Guyomar, F. Legeai, E. Jousselin, C. Mougel, C. Lemaitre, J. Simon
 - author:
@@ -72,7 +72,7 @@
   subtitle: '*Aquaculture*'
   date: "2024-01"
   path: https://doi.org/10.1016/j.aquaculture.2023.740226
-  position: '3/12'
+  position: '2/6'
   first: '&emsp;&emsp;&emsp;'
   description: L. Frohn, D. Peixoto, C. Guyomar, C. Teixeira, F. Terrier, P. Aguirre, S. Maman Haddad, J. Bobe, B. Costas, N. Richard, K. Pinel, S. Skiba-Cassy
 - author:
@@ -101,7 +101,7 @@
   subtitle: '*Scientific Reports*'
   date: "2021-07"
   path: https://doi.org/10.1038/s41598-021-94068-w
-  position: '2/5'
+  position: '2/6'
   first: '&emsp;&emsp;&emsp;'
   description: E. Baiakhmetov, C. Guyomar, E. Shelest, M. Nobis, P. Gudkova
 - author:
@@ -137,7 +137,7 @@
   subtitle: '*BMC Biology*'
   date: "2021-12"
   path: https://doi.org/10.1186/s12915-021-01163-5
-  position: '2/8'
+  position: '2/6'
   first: '*As first or co-first*'
   description: E. Cardona, C. Guyomar, T. Desvignes, J. Montfort, S. Guendouz, J. Postlethwait, S. Skiba-Cassy, J. Bobe
 - author:
@@ -175,7 +175,7 @@
   subtitle: '*Molecular Biology and Evolution*'
   date: "2022-01"
   path: https://doi.org/10.1093/molbev/msac004
-  position: '5/8'
+  position: '2/6'
   first: '&emsp;&emsp;&emsp;'
   description: T. Desvignes, P. Bardou, J. Montfort, J. Sydes, C. Guyomar, S. George, J. Postlethwait, J. Bobe
 - author:
@@ -212,9 +212,9 @@
   subtitle: '*Frontiers in Physiology*'
   date: "2022-04"
   path: https://doi.org/10.3389/fphys.2022.874527
-  position: '2/5'
+  position: '2/6'
   first: '&emsp;&emsp;&emsp;'
-  description: R. Sontowski, C. Guyomar, Y. Poeschl, A. Weinhold, N. Vassão, D. Sontowski
+  description: R. Sontowski, C. Guyomar, Y. Poeschl, A. Weinhold, N. van Dam, D. Vassão
 - author:
   - family: Sontowski
     given: Rebekka
@@ -250,9 +250,9 @@
   subtitle: '*Molecular Ecology Resources*'
   date: "2022-07"
   path: https://doi.org/10.1111/1755-0998.13594
-  position: '5/6'
+  position: '2/6'
   first: '&emsp;&emsp;&emsp;'
-  description: R. Sontowski, Y. Poeschl, Y. Okamura, H. Vogel, C. Guyomar, A. Cortesero, N. Sontowski
+  description: R. Sontowski, Y. Poeschl, Y. Okamura, H. Vogel, C. Guyomar, A. Cortesero, N. van Dam
 - author:
   - family: Guyomar
     given: Cervin
@@ -282,7 +282,7 @@
   subtitle: '*NAR Genomics and Bioinformatics*'
   date: "2020-09"
   path: https://doi.org/10.1093/nargab/lqaa047
-  position: '1/6'
+  position: '2/6'
   first: '*As first or co-first*'
   description: C. Guyomar, W. Delage, F. Legeai, C. Mougel, J. Simon, C. Lemaitre
 - abstract: Abstract Understanding microRNA (miRNA) functions has been
@@ -355,9 +355,9 @@
   subtitle: '*Nucleic Acids Research*'
   date: "2024-01"
   path: https://doi.org/10.1093/nar/gkad1154
-  position: '2/12'
+  position: '2/6'
   first: '&emsp;&emsp;&emsp;'
-  description: S. Janati-Idrissi, M. Guyomar, C. Nguyen, F. Mechkouri, T. Gay, N. Montfort, S. Gonzalez, J. Abbasi, A. Bugeon, M. Thermes, J. Seitz, V. Bobe, H. Janati-Idrissi, J. Guyomar
+  description: S. Janati-Idrissi, M. de Abreu, C. Guyomar, F. de Mello, T. Nguyen, N. Mechkouri, S. Gay, J. Montfort, A. Gonzalez, M. Abbasi, J. Bugeon, V. Thermes, H. Seitz, J. Bobe
 - abstract: Abstract Genome annotation plays a crucial role in providing
     comprehensive catalog of genes and transcripts for a particular
     species. As research projects generate new transcriptome data
@@ -409,7 +409,7 @@
   subtitle: '*NAR Genomics and Bioinformatics*'
   date: "2023-10"
   path: https://doi.org/10.1093/nargab/lqad089
-  position: '2/4'
+  position: '2/6'
   first: '*As first or co-first*'
   description: C. Kurylo, C. Guyomar, S. Foissac, S. Djebali
 - abstract: AbstractAUTS2 gene has been associated with numerous human
@@ -467,7 +467,7 @@
   subtitle: '*PREPRINT*'
   date: "2023-03"
   path: https://doi.org/10.21203/rs.3.rs-2617834/v1
-  position: '6/10'
+  position: '2/6'
   first: '&emsp;&emsp;&emsp;'
   description: A. Clément, C. Merdrignac, A. Brionne, T. Nguyen, J. Montfort, C. Guyomar, A. Dauvé, A. Herpin, V. Colson, J. Bobe
 - accessed: 2024-01-31
@@ -500,7 +500,7 @@
   subtitle: '*Plant and Soil*'
   date: "2018-06"
   path: https://doi.org/10.1007/s11104-017-3301-2
-  position: '4/6'
+  position: '2/6'
   first: '&emsp;&emsp;&emsp;'
   description: A. Neal, M. Blackwell, E. Akkari, C. Guyomar, I. Clark, P. Hirsch
 - abstract: SummaryPhosphorus cycling exerts significant influence upon
@@ -557,6 +557,6 @@
   subtitle: '*Environmental Microbiology*'
   date: "2017-07"
   path: https://doi.org/10.1111/1462-2920.13778
-  position: '5/8'
+  position: '2/6'
   first: '&emsp;&emsp;&emsp;'
   description: A. Neal, M. Rossmann, C. Brearley, E. Akkari, C. Guyomar, I. Clark, E. Allen, P. Hirsch
