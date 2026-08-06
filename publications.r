@@ -41,7 +41,7 @@ create_pub_listing <- function(bib_file, author = "Guyomar") {
       
       authors.string <- paste(authors.string, collapse = ", ")
       authors.string <- sprintf("  description: %s", authors.string)
-      # authors <- sub(".*family: ", "", grep("family:", article, value = TRUE))
+      authors <- sub(".*family: ", "", grep("family:", article, value = TRUE))
       # given <- sub(".*given: ", "", grep("given", article, value = TRUE))
       # given.first <-paste( sapply(given,substring,1,1),".", sep="")
       # authors.string <- paste(given.first, authors, collapse = ", ")

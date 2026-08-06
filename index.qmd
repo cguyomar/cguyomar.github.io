@@ -12,7 +12,7 @@ knitr::opts_chunk$set(eval=F)
 
 ::: columns
 ::: {.column width="40%"}
-
+<br>
 ![](documents/cervin_guyomar.jpg ){width=70%}
 
 
@@ -36,12 +36,12 @@ Here is a summary of my past and current projects :
 I'm invovled in two europeans projects aiming at improving genomic annotations of farmed species.
 I am a contributor of the WP2 of  GENE-SWitCH, where we analyze multi-omics (RNA-seq, smRNA-seq, ChIP-seq, ATAC-seq, Hi-C) data of two monogastric species during development to improve functional annotations of their genomes and characterize the regulation landscape during development.
 
-I am also more lightly involved in AQUA-FAANG, for the annotation of miRNAs in 6 fish species.
+I am also involved in AQUA-FAANG, focusing on the annotation of miRNAs in 6 fish species.
 
 ### Genotyping using low coverage sequencing data
 
 I'm exploring the capacities of sparse or low coverage sequencing for cost efficient genome-wide genotyping.
-I have started to developp [PARSEC](https://github.com/cguyomar/PARSEC/) a Nextflow pipeline for variant calling and imputation using such data
+I have started to develop [PARSEC](https://github.com/cguyomar/PARSEC/) a Nextflow pipeline for variant calling and imputation using such data
 
 ### Bioinformatics analyses
 
@@ -49,6 +49,6 @@ As a  [Sigenae](https://www.sigenae.org/) engineer, I bring support to biologist
 
 ### Past projects : 
   - Annotation and analysis of circulating miRNAs of the rainbow trout for biomarker selection
-  - PhD project :
+  - PhD project ([manuscript](https://ged.univ-rennes1.fr/nuxeo/site/esupversions/2efe3f15-be27-4406-a820-456bfa82c14b?inline)) :
     - Targetted genome assembly in metagenomic data ([MinYS](https://github.com/cguyomar/minys)) 
     - Strain level characterization of microbial species in the pea aphid holobiont 
