@@ -8,6 +8,15 @@ output: html_document
 
 ### Supervising 
 
+* ##### Lionel Viguier (2026)
+  Master Biologie des systèmes, Université de Toulouse<br>
+  Genotype imputation using pedigree information
+
+  
+* ##### N’Guessan Samuel N’GBAIN  (2026)
+  Master Biologie des systèmes, Université de Toulouse<br>
+  Characterization of porcine retrocopies with functional omic data
+
 * ##### Océane Carpentier (2024)
   Master 2 BIG, Rennes<br>
   Multi-omics integration for miRNA regulation analysis
@@ -20,7 +29,6 @@ output: html_document
   Master 2 Bioinformatique et génomique, Rennes<br>
   Development of an innovative method based on a reference guided assembly for the genome reconstruction of a
 bacteriophage APSE
-
 
 ### Teaching
 

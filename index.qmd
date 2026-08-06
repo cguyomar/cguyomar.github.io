@@ -20,7 +20,7 @@ knitr::opts_chunk$set(eval=F)
 ::: {.column width="60%"}
 
 <br>
-I am a reasearch engineer in INRAE [GenPhySE](https://genphyse.toulouse.inra.fr/) in Toulouse, France. I'm a member of the [DynaGen group](https://genphyse.toulouse.inra.fr/groups/dynagen) and the [Sigenae platform](https://www.sigenae.org/).
+I am a reasearch engineer in INRAE [GenPhySE](https://genphyse.toulouse.inra.fr/) in Toulouse, France. I'm a member of the [Regliss group](https://genphyse.inrae.fr/poles/5#REGLISS) and the [Sigenae platform](https://www.sigenae.org/) that I am co-leading since 2026.
 
 I am a bioinformatician, with a focus on sequencing data analysis for functional genomics
 :::
